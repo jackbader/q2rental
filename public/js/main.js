@@ -5,6 +5,7 @@ $(document).ready(() => {
   // (function() {
 
 
+
     $('.parallax').parallax();
 
     $.getJSON('/items')
@@ -24,6 +25,8 @@ $(document).ready(() => {
           const $cardContent = $('<div>').addClass('card-content black-text')
           const $span = $('<span>').addClass('card-title')
           $span.text(item.title)
+          const $pPrice = $('<p>')
+          $pPrice.text("$" + item.daily_price + " a day.")
           const $p = $('<p>')
           $p.text(item.desc)
           const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
@@ -31,9 +34,14 @@ $(document).ready(() => {
           $card.append($anchor);
           $card.append($img);
           $cardContent.append($span)
+          $cardContent.append($pPrice)
           $cardContent.append($p)
           $card.append($cardContent)
           $items.append($card);
+
+          $card.click(function() {
+            window.location.href = `item.html?id=${item.id}`;
+          })
         }
       })
       .fail(() => {
