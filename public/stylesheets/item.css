@@ -3,3 +3,25 @@ body {
   width: 100%;
   /*background-color: red;*/
 }
+nav {
+  z-index: 1;
+}
+#displayInfo img {
+  width:30%;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+#displayInfo p {
+  width:40%;
+  margin-top: 18%;
+  margin-left: 8%;
+  line-height: 220%;
+}
+#userInfo a:first-child{
+  margin-top: 5%;
+  margin-left: 23%;
+}
+#userInfo a:not(:first-child){
+  margin-top: 5%;
+  margin-left: 10%;
+}
