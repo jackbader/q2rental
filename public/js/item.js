@@ -49,5 +49,10 @@ $(document).ready(() => {
     Materialize.toast('Unable to retrieve item', 3000);
   });
 
+  //for itemEdit.html
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
 
 })
