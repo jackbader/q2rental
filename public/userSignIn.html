@@ -13,7 +13,7 @@
       </script>
 
         <!-- my css -->
-      <link href = "stylesheets/style.css" rel = "stylesheet">
+      <link href = "stylesheets/userSignIn.css" rel = "stylesheet">
 
         <!-- my js -->
       <script src = "js/main.js"></script>
@@ -35,25 +35,36 @@
 
   <body>
 
-    <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Email</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a  href="userSignUp.html">New User?</a></li>
+          <li><a href="badges.html"><i class="material-icons prefix">account_circle</i></a></li>
+        </ul>
       </div>
+    </nav>
 
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
-      
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">User Name or Email</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+
     </form>
+
   </div>
 
   </body>
