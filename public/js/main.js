@@ -5,13 +5,11 @@ $(document).ready(() => {
   // (function() {
 
 
-
     $('.parallax').parallax();
-    console.log('Jack likes penis is his hinus');
 
     $.getJSON('/items')
       .done((items) => {
-        const $items = $('#items');
+        const $items = $('.your-class');
 
         for (const item of items) {
           const $anchor = $('<a>')
@@ -44,6 +42,12 @@ $(document).ready(() => {
             window.location.href = `item.html?id=${item.id}`;
           })
         }
+        $('.your-class').slick({
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 1500,
+        });
       })
       .fail(() => {
         Materialize.toast('Unable to retrieve items', 3000);
