@@ -9,5 +9,10 @@ $(document).ready(() => {
 
   $title.text()
 
+  //for itemEdit.html
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
 
 })

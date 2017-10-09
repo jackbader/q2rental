@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title><!-- item name --></title>
+
+      <!-- my css -->
+    <link href = "stylesheets/itemEdit.css" rel = "stylesheet">
+
+      <!-- my js -->
+    <script src = "js/main.js"></script>
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+          <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="row">
+      <form class="col s12">
+        <div>
+        <label for="title">Name</label>
+          <div class="input-field col m12">
+            <input  id="title" value= "lawnmower" type="text" class="validate" >
+          </div>
+        </div>
+
+      <div>
+        <label for="desc">Description</label>
+          <div class="input-field col m12">
+            <input value="works pretty well" id="desc" type="text" class="validate">
+          </div>
+      </div>
+
+      <div>
+        <label for="daily_price">Daily Price</label>
+          <div class="input-field col m12">
+            <input value="$1000" id="daily_price" type="text" class="validate">
+          </div>
+      </div>
+      
+            <select class="browser-default">
+              <option value="" disabled selected>Choose the catagory</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+
+      </form>
+
+    </div>
+
+    <form>
+      <div class="file-field ">
+        <button class = "btn">
+          <span>File</span>
+          <input type="file">
+        </button>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+    </form>
+
+  </body>
+
+</html>
