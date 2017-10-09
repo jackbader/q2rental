@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
 
-  console.log('ready')
+  console.log('ready test')
 
   $.getJSON('/token')
     .done((loggedIn) => {
