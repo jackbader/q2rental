@@ -7,6 +7,7 @@ $(document).ready(() => {
 
 
     $('.parallax').parallax();
+    console.log('Jack likes penis is his hinus');
 
     $.getJSON('/items')
       .done((items) => {
