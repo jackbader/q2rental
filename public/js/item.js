@@ -4,6 +4,8 @@ $(document).ready(() => {
 
   const itemId = window.location.search.replace(/\D+/g, '')
 
+  //gfhxhcdtj
+
   if (!itemId) {
     window.location.href = '/index.html';
   }
