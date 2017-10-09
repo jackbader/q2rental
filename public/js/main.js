@@ -20,20 +20,23 @@ $(document).ready(() => {
           //   })
           //   .tooltip();
 
-          const $card = $('<div>').addClass('card');
-          const $cardImage = $('<div>').addClass('card-image');
-          const $col = $('<div>').addClass('col s6 m4 l3');
-          const $img = $('<img>').attr({ src: item.img_url, alt: item.title });
+          const $card = $('<div>').addClass('card card-image col s6 m4 l3');
+          const $cardContent = $('<div>').addClass('card-content black-text')
+          const $span = $('<span>').addClass('card-title')
+          $span.text(item.title)
+          const $p = $('<p>')
+          $p.text(item.desc)
+          const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
 
-
-          $cardImage.append($img);
-          $anchor.append($cardImage);
           $card.append($anchor);
-          $col.append($card);
-          $items.append($col);
+          $card.append($img);
+          $cardContent.append($span)
+          $cardContent.append($p)
+          $card.append($cardContent)
+          $items.append($card);
         }
       })
       .fail(() => {
-        Materialize.toast('Unable to retrieve books', 3000);
+        Materialize.toast('Unable to retrieve items', 3000);
       });
   });
