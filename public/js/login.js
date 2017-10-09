@@ -1,20 +1,24 @@
-(function() {
-  'use strict';
+'use strict';
 
-  $('.button-collapse').sideNav();
+$(document).ready(() => {
+
+  console.log('its ready kids')
 
   $('#loginForm').submit((event) => {
+
+    console.log('lol')
     event.preventDefault();
 
-    const email = $('#email').val().trim();
+    const email = $('#email').val();
+    console.log(email)
     const password = $('#password').val();
 
     if (!email) {
-      return Materialize.toast('Email must not be blank', 3000);
+      return Materialize.toast('Must enter an email', 3000);
     }
 
     if (!password) {
-      return Materialize.toast('Password must not be blank', 3000);
+      return Materialize.toast('Must have a password', 3000);
     }
 
     const options = {
@@ -27,10 +31,10 @@
 
     $.ajax(options)
       .done(() => {
-        window.location.href = '/favorites.html';
+        window.location.href = '/index.html';
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
       });
   });
-})();
+})

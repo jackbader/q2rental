@@ -1,7 +1,8 @@
-(function() {
-  'use strict';
+'use strict';
 
-  $('.button-collapse').sideNav();
+$(document).ready(() => {
+
+  console.log('ready')
 
   $.getJSON('/token')
     .done((loggedIn) => {
@@ -9,9 +10,8 @@
       const $secondNavItems = $('.secondNavItem');
 
       if (loggedIn) {
-        const $favorites = $('<a>')
-          .attr('href', '/favorites.html')
-          .text('Favorites');
+
+        console.log('logged in')
 
         const $logout = $('<a>').text('Log out');
 
@@ -26,24 +26,24 @@
 
           $.ajax(options)
             .done(() => {
-              window.location.href = '/login.html';
+              window.location.href = '/index.html';
             })
             .fail(() => {
-              window.location.href = '/login.html'
+              window.location.href = '/index.html'
               Materialize.toast('Unable to log out. Please try again.', 3000);
             });
         });
 
-        $firstNavItems.append($favorites);
+        $firstNavItems.append();
         $secondNavItems.append($logout);
       }
       else {
         const $signup = $('<a>')
-          .attr('href', '/signup.html')
+          .attr('href', '/userSignUp.html')
           .text('Sign up');
 
         const $login = $('<a>')
-          .attr('href', '/login.html')
+          .attr('href', '/userSignIn.html')
           .text('Log in');
 
         $firstNavItems.append($signup);
@@ -63,4 +63,4 @@
       window.QUERY_PARAMETERS[param[0]] = param[1];
     });
   }
-})();
+});
