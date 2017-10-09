@@ -14,9 +14,9 @@ $(document).ready(() => {
         for (const item of items) {
           const $anchor = $('<a>')
             .attr({
-              href: "/item.html?id=${item.id}",
+              href: `/item.html?id=${item.id}`,
               'data-delay': '50',
-              'data-tooltip': book.title
+              'data-tooltip': item.title
             })
             .tooltip();
 
