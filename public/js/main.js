@@ -21,7 +21,7 @@ $(document).ready(() => {
             })
             .tooltip();
 
-          const $card = $('<div>').addClass('card card-image col s6 m4 l3');
+          const $card = $('<div>').addClass('card card-image col s6 m4 l3 ');
           const $cardContent = $('<div>').addClass('card-content black-text')
           const $span = $('<span>').addClass('card-title')
           $span.text(item.title)
