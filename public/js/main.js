@@ -13,12 +13,12 @@ $(document).ready(() => {
 
         for (const item of items) {
           const $anchor = $('<a>')
-          //   .attr({
-          //     href: `/index.html?id=${book.id}`,
-          //     'data-delay': '50',
-          //     'data-tooltip': book.title
-          //   })
-          //   .tooltip();
+            .attr({
+              href: `/item.html?id=${item.id}`,
+              'data-delay': '50',
+              'data-tooltip': item.title
+            })
+            .tooltip();
 
           const $card = $('<div>').addClass('card card-image col s6 m4 l3');
           const $cardContent = $('<div>').addClass('card-content black-text')

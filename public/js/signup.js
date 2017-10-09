@@ -1,24 +1,32 @@
-(function() {
-  'use strict';
+$(document).ready(() => {
 
-  $('.button-collapse').sideNav();
+  console.log('test')
+  'use strict';
 
   // eslint-disable-next-line max-statements
   $('#signUpForm').submit((event) => {
+    console.log('test')
     event.preventDefault();
 
-    const firstName = $('#firstName').val().trim();
-    const lastName = $('#lastName').val().trim();
+    const first_name = $('#firstName').val().trim();
+    const last_name = $('#lastName').val().trim();
     const email = $('#email').val().trim();
     const password = $('#password').val();
-    const userName = $('#userName').val().trim();
+    const username = $('#userName').val().trim();
 
-    if (!firstName) {
+    if (!first_name) {
       return Materialize.toast('First name must not be blank', 3000);
     }
 
-    if (!lastName) {
+    if (!last_name) {
       return Materialize.toast('Last name must not be blank', 3000);
+    }
+
+    if (!username || username.length < 8) {
+      return Materialize.toast(
+        'Username must be at least 8 characters long',
+        3000
+      );
     }
 
     if (!email) {
@@ -36,14 +44,11 @@
       );
     }
 
-    if (!userName) {
-      return Materialize.toast('Enter Username', 3000);
-    }
 
 
     const options = {
       contentType: 'application/json',
-      data: JSON.stringify({ firstName, lastName, email, password, userName }),
+      data: JSON.stringify({ first_name, last_name, email, password, username }),
       dataType: 'json',
       type: 'POST',
       url: '/users'
@@ -57,4 +62,4 @@
         Materialize.toast($xhr.responseText, 3000);
       });
   });
-})();
+});
