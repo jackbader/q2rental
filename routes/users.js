@@ -34,6 +34,7 @@ router.get('/users/:id', (req, res, next) => {
 router.post('/users', (req, res, next) => {
 
   const {first_name, last_name, email, username, password} = req.body
+  console.log(username)
 
 
   if (!email || !email.trim()) {
@@ -72,7 +73,7 @@ router.post('/users', (req, res, next) => {
     .then((rows) => {
       const user = camelizeKeys(rows[0]);
       const claim = { userId: user.id };
-      const token = jwt.sign(claim, process.env.JWT_KEY, {
+      const token = jwt.sign(claim, 'kjlsdhfkljsdhfs', {
         expiresIn: '7 days'
       });
 
@@ -91,3 +92,5 @@ router.post('/users', (req, res, next) => {
     });
 
 })
+
+module.exports = router;

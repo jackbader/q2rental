@@ -15,12 +15,13 @@
       <!-- my css -->
     <link href = "stylesheets/userSignUp.css" rel = "stylesheet">
 
-      <!-- my js -->
-    <script src = "js/main.js"></script>
 
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+    <!-- my js -->
+  <script src = "js/signup.js"></script>
 
           <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,20 +45,20 @@
     </nav>
 
     <div class="row">
-    <form class="col s12">
+    <form class="col s12" id="signUpForm">
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
+          <input id="firstName" type="text" class="validate">
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
+          <input id="lastName" type="text" class="validate">
           <label for="last_name">Last Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
+          <input id="userName" type="text" class="validate">
           <label for="username">User Name</label>
         </div>
       </div>
