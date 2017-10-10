@@ -12,6 +12,9 @@ $(document).ready(() => {
         const $items = $('.your-class');
 
         for (const item of items) {
+        const title = item.title
+
+
           const $anchor = $('<a>')
             .attr({
               href: `/item.html?id=${item.id}`,
@@ -20,7 +23,7 @@ $(document).ready(() => {
             })
             .tooltip();
 
-          const $card = $('<div>').addClass('card card-image col s6 m4 l3 ');
+          const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
           const $cardContent = $('<div>').addClass('card-content black-text')
           const $span = $('<span>').addClass('card-title')
           $span.text(item.title)
@@ -46,7 +49,7 @@ $(document).ready(() => {
           slidesToShow: 2,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 1500,
+          autoplaySpeed: 3000,
         });
       })
       .fail(() => {
