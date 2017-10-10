@@ -5,11 +5,11 @@ $(document).ready(() => {
   console.log('ready test')
 
   $.getJSON('/token')
-    .done((loggedIn) => {
+    .done((data) => {
       const $firstNavItems = $('.firstNavItem');
       const $secondNavItems = $('.secondNavItem');
 
-      if (loggedIn) {
+      if (data.hasToken) {
 
         console.log('logged in')
 
