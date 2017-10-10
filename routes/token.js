@@ -12,11 +12,16 @@ const router = express.Router();
 
 router.get('/token', (req, res) => {
   jwt.verify(req.cookies.token, 'vgufvgjvg', (err, _payload) => {
+    let hasToken
+    let newobj
     if (err) {
-      return res.send(false);
+      hasToken = false
+      newobj['hasToken'] = hasToken
+      return res.send(newobj);
     }
-
-    res.send(true);
+    hasToken = true
+    newobj['cookies'] = res.cookies
+    res.send(newobj);
   });
 });
 
