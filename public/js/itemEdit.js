@@ -7,12 +7,10 @@
     window.location.href = '/itemEdit.html';
   }
 
-  const renderBook = function(book) {
-    $('#title').val(book.title);
-    $('#author').val(book.author);
-    $('#genre').val(book.genre);
-    $('#description').text(book.description);
-    $('#cover').val(book.coverUrl);
+  const renderBook = function(item) {
+    $('#title').val(item.title);
+    $('#desc').text(item.description);
+    $('#daily_price').val(item.daily_price);
     $('#cancel').attr('href', `/book.html?id=${book.id}`);
 
     Materialize.updateTextFields();
@@ -24,10 +22,9 @@
       event.preventDefault();
 
       const title = $('#title').val().trim();
-      const author = $('#author').val().trim();
-      const genre = $('#genre').val().trim();
-      const description = $('#description').val().trim();
-      const coverUrl = $('#cover').val().trim();
+      const desc = $('#desc').val().trim();
+      const dailyPrice = $('#daily_price').val().trim();
+
 
       if (!title) {
         return Materialize.toast('Title must not be blank', 3000);
