@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
   $("form").on('submit', (e) => {
+    e.preventDefault()
     const title = $('#title').val()
     const desc = $('#desc').val()
     const daily_price = $('#daily_price').val()
@@ -14,6 +15,7 @@ $(document).ready(() => {
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
       })
+    })
 
   // const item = {
   //   title: title,
