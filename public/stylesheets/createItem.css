@@ -1,7 +1,8 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   width: 100%;
-  /*background-color: red;*/
+  background-image: url("../img/whirlpool.png");
+  /*background-color: blue;*/
 }
 nav {
   background-color: #6BBA54 !important;
