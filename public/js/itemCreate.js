@@ -1,6 +1,9 @@
 $(document).ready(() => {
 
-  console.log($('#title').val())
+  $("form").on('submit', (e) => {
+    console.log($('#title').val())
+    e.preventDefault()
+})
 
   // const item = {
   //   title,
