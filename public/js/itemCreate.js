@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     $.getJSON('/token')
       .done((data) => {
-        console.log(data.cookie)
+        console.log(data)
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
