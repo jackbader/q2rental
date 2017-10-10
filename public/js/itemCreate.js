@@ -1,7 +1,9 @@
 $(document).ready(() => {
 
   $("form").on('submit', (e) => {
-    console.log($('#title').val())
+    const title = $('#title').val()
+    const desc = $('#desc').val()
+    const daily_price = $('#daily_price').val()
     e.preventDefault()
 })
 
