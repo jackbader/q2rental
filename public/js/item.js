@@ -20,16 +20,16 @@ $(document).ready(() => {
 
         $.getJSON(`/items/${itemId}`)
           .done((item) => {
-            console.log(item.owner_id)
-            if (item.owner_id === userId) {
+            console.log(item[0].owner_id)
+            if (item[0].owner_id === userId) {
 
                       let editbutton = $('<a>')
                       editbutton.addClass('waves-effect waves-light btn-large')
                       editbutton.text('Edit')
                       editbutton.attr({
-                        href: `/itemEdit.html?id=${item.id}`,
+                        href: `/itemEdit.html?id=${item[0].id}`,
                         'data-delay': '50',
-                        'data-tooltip': item.titlqe
+                        'data-tooltip': item.title
                       })
                       .tooltip();
                       $('.buttonRow').append(editbutton)
