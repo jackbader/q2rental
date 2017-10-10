@@ -1,6 +1,11 @@
 $(document).ready(() => {
 
-  console.log($('#title').val())
+  $("form").on('submit', (e) => {
+    const title = $('#title').val()
+    const desc = $('#desc').val()
+    const daily_price = $('#daily_price').val()
+    e.preventDefault()
+})
 
   // const item = {
   //   title,
