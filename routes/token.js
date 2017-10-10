@@ -20,6 +20,7 @@ router.get('/token', (req, res) => {
       return res.send(newobj);
     }
     hasToken = true
+    newobj['hasToken'] = hasToken
     newobj['cookies'] = payload
     res.send(newobj);
   });

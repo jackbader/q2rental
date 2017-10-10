@@ -4,7 +4,49 @@ $(document).ready(() => {
 
   const itemId = window.location.search.replace(/\D+/g, '')
 
-  //gfhxhcdtj
+  //if logged in
+  $.getJSON('/token')
+    .done((data) => {
+
+      console.log(data)
+
+      if (data.hasToken) {
+        console.log('is logged in')
+
+        //check if item is users
+        let userId = data.cookies.userId
+        console.log('userid: ' + userId)
+        console.log('itemid: ' + itemId)
+
+        $.getJSON(`/items/${itemId}`)
+          .done((item) => {
+            console.log(item.owner_id)
+            if (item.owner_id === userId) {
+
+                      let editbutton = $('<a>')
+                      editbutton.addClass('waves-effect waves-light btn-large')
+                      editbutton.text('Edit')
+                      editbutton.attr({
+                        href: `/itemEdit.html?id=${item.id}`,
+                        'data-delay': '50',
+                        'data-tooltip': item.titlqe
+                      })
+                      .tooltip();
+                      $('.buttonRow').append(editbutton)
+            }
+
+          })
+          .fail(() => {
+            Materialize.toast('Unable to retrieve book', 3000);
+          });
+      }
+      else {
+        console.log('is not logged in')
+      }
+    })
+    .fail(($xhr) => {
+      Materialize.toast($xhr.responseText, 3000);
+    });
 
   if (!itemId) {
     window.location.href = '/index.html';
