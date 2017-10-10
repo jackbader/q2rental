@@ -11,16 +11,16 @@ const { camelizeKeys } = require('humps');
 const router = express.Router();
 
 router.get('/token', (req, res) => {
-  jwt.verify(req.cookies.token, 'vgufvgjvg', (err, _payload) => {
+  jwt.verify(req.cookies.token, 'vgufvgjvg', (err, payload) => {
     let hasToken
-    let newobj
+    let newobj= {}
     if (err) {
       hasToken = false
       newobj['hasToken'] = hasToken
       return res.send(newobj);
     }
     hasToken = true
-    newobj['cookies'] = res.cookies
+    newobj['cookies'] = payload
     res.send(newobj);
   });
 });
