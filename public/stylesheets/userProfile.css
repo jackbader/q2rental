@@ -1,0 +1,42 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+  background-image: url("../img/whirlpool.png");
+  /*background-color: blue;*/
+}
+nav {
+  background-color: #6BBA54 !important;
+}
+#userStats img {
+  width:40%;
+  border-radius: 25px;
+  margin-top: 10%;
+  margin-left: 28%;
+}
+#userStats div {
+  margin-top: 3%;
+  margin-left: 23%;
+  margin-bottom: 2%;
+}
+#userStats p{
+  display:inline-block;
+  margin-left: 8%;
+}
+#userStats a {
+  display:inline-block;
+  margin-left: 12%;
+}
+hr {
+  width: 90%;
+  margin-bottom: 3%;
+}
+#myItems {
+  background-color: grey;
+  width:30%;
+  margin-left: 15%;
+}
+#rentedItems {
+  background-color: grey;
+  width:30%;
+  margin-left: 5%;
+}
