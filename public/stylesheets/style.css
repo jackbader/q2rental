@@ -36,10 +36,9 @@ nav {
 }
 
 #items {
-  height:300px;
-  background-color: blue;
+  background-color: #6BBA54;
 }
 .card:hover {
-  background-color: #F26D75;
+  background-color: #1B7E37;
 }
 bs
