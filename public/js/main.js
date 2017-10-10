@@ -12,6 +12,9 @@ $(document).ready(() => {
         const $items = $('.your-class');
 
         for (const item of items) {
+        const title = item.title
+
+
           const $anchor = $('<a>')
             .attr({
               href: `/item.html?id=${item.id}`,
@@ -46,7 +49,7 @@ $(document).ready(() => {
           slidesToShow: 2,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 1500,
+          autoplaySpeed: 3000,
         });
       })
       .fail(() => {
