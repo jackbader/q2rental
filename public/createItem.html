@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
+
   <head>
 
     <meta charset="utf-8">
-    <title><!-- item name --></title>
+    <title></title>
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+
+
+    <link rel="stylesheets/slick/slick-theme.css" rel = "stylesheet"/>
+
 
       <!-- my css -->
-    <link href = "stylesheets/itemEdit.css" rel = "stylesheet">
+    <link href = "stylesheets/createItem.css" rel = "stylesheet">
 
       <!-- my js -->
-    <script src = "js/main.js"></script>
+      <script type="text/javascript" src="stylesheets/slick/slick.min.js"></script>
+    <script src = "js/nav.js"></script>
 
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
@@ -28,43 +41,43 @@
 
   <body class = "row">
 
-    <nav>
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="firstNavItem"></li>
-          <li class="secondNavItem"></li>
-          <li><a href="badges.html"><i class="material-icons prefix">account_circle</i></a></li>
-        </ul>
-      </div>
-    </nav>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="firstNavItem"></li>
+            <li class="secondNavItem"></li>
+            <li><a href="badges.html"><i class="material-icons prefix">account_circle</i></a></li>
+          </ul>
+        </div>
+      </nav>
 
-  <section class = "col s6" id = "picture">
-    <img src="https://i.pinimg.com/736x/4d/7a/69/4d7a69dfe5c37887cfa457b81ce3fd27--fantasy-dragon-fantasy-art.jpg" alt="item picture">
-  </section>
+    <section class = "col s6" id = "picture">
+      <img src="https://i.pinimg.com/736x/4d/7a/69/4d7a69dfe5c37887cfa457b81ce3fd27--fantasy-dragon-fantasy-art.jpg" alt="item picture">
+    </section>
 
-  <section class = "col s6" id = "form">
+    <section class = "col s6" id = "form">
 
       <div class="row">
         <form class="col s12">
           <div>
-          <label for="title">Name</label>
             <div class="input-field col m12">
-              <input  id="title" value= "lawnmower" type="text" class="validate" >
+              <input  id="title" value= "" type="text" class="validate" >
+              <label for="title">Name</label>
             </div>
           </div>
 
         <div>
-          <label for="desc">Description</label>
             <div class="input-field col m12">
-              <input value="works pretty well" id="desc" type="text" class="validate">
+              <input value="" id="desc" type="text" class="validate">
+              <label for="desc">Description</label>
             </div>
         </div>
 
         <div>
-          <label for="daily_price">Daily Price</label>
             <div class="input-field col m12">
-              <input value="$1000" id="daily_price" type="text" class="validate">
+              <input value="" id="daily_price" type="text" class="validate">
+              <label for="daily_price">Daily Price</label>
             </div>
         </div>
 
@@ -91,7 +104,7 @@
         </div>
       </form>
 
-  </section>
+    </section>
 
   </body>
 
