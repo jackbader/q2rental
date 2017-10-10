@@ -4,7 +4,7 @@ $(document).ready(() => {
 
   // (function() {
 
-
+    
     $('.parallax').parallax();
 
     $.getJSON('/items')
