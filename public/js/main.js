@@ -19,7 +19,7 @@ $(document).ready(() => {
             .attr({
               href: `/item.html?id=${item.id}`,
               'data-delay': '50',
-              'data-tooltip': item.title
+              'data-tooltip': item.titlqe
             })
             .tooltip();
 

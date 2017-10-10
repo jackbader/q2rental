@@ -2,8 +2,9 @@
 <html>
 
   <head>
+
     <meta charset="utf-8">
-    <title>Home Page</title>
+    <title>Profile Page</title>
 
     <!-- jquery -->
     <script
@@ -17,11 +18,11 @@
 
 
       <!-- my css -->
-    <link href = "stylesheets/style.css" rel = "stylesheet">
-    <script type="text/javascript" src="stylesheets/slick/slick.min.js"></script>
+    <link href = "stylesheets/userProfile.css" rel = "stylesheet">
+
       <!-- my js -->
-    <script src = "js/main.js"></script>
-    <script src = "js/nav.js"></script>
+    <script type="text/javascript" src="stylesheets/slick/slick.min.js"></script>
+    <script src = "js/blahblahblah.js"></script>
 
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
@@ -46,36 +47,52 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="firstNavItem"></li>
           <li class="secondNavItem"></li>
-          <li><a href="badges.html"><i class="material-icons prefix">account_circle</i></a></li>
         </ul>
       </div>
     </nav>
 
-    <section class = "row" id = "infoArea">
-      <h1 class = "col s12" id = 'infoTitle'>
-        RENT junk
-      </h1>
+    <section class = "row" id = "userStats">
 
-      <p class = "col s12" id = 'infoDesc'>
-        Got cool stuff that you dont use alot but dont want to sell?
-        Dope rent the shit out on our website and help normal kids afford weed.
+        <img src="http://i.telegraph.co.uk/multimedia/archive/03491/Vladimir_Putin_1_3491835k.jpg" alt="profile picture">
 
-      </p>
-      <input type="text" id="searchBar" onkeyup="myFunction()" placeholder="Search for names..">
+        <div>
+          <p>
+            Username :
+          </p>
+
+          <p>
+            Joined at :
+          </p>
+
+          <a class="waves-effect waves-light btn">Message</a>
+        </div>
+
     </section>
 
+    <hr />
 
-    <section class = "row" id = "items">
-      <div class="col s12 your-class">
+    <section class = "row" id = "rentIfno">
 
+      <div class = "col s6" id = "myItems">
+        <ul id = "itemList">
+
+        </ul>
+        <ul id = "itemBool">
+
+        </ul>
       </div>
+
+      <div class = "col s6" id = "rentedItems">
+        <ul id = "myRents">
+
+        </ul>
+        <ul id = "rentedReturnDate">
+
+        </ul>
+      </div>
+
     </section>
 
   </body>
-
-
-
-
-
 
 </html>
