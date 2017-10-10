@@ -2,8 +2,9 @@
 <html>
 
   <head>
+
     <meta charset="utf-8">
-    <title>Home Page</title>
+    <title>Profile Page</title>
 
     <!-- jquery -->
     <script
@@ -17,10 +18,9 @@
 
 
       <!-- my css -->
-    <link href = "stylesheets/style.css" rel = "stylesheet">
-    <script type="text/javascript" src="stylesheets/slick/slick.min.js"></script>
+    <link href = "stylesheets/userProfile.css" rel = "stylesheet">
+
       <!-- my js -->
-    <script src = "js/main.js"></script>
     <script src = "js/nav.js"></script>
 
     <!-- Materialize -->
@@ -46,45 +46,52 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="firstNavItem"></li>
           <li class="secondNavItem"></li>
-          <li><a href="badges.html"><i class="material-icons prefix">account_circle</i></a></li>
         </ul>
       </div>
     </nav>
 
-    <section class = "row" id = "infoArea">
-      <h1 class = "col s12" id = 'infoTitle'>
-        RENT junk
-      </h1>
+    <section class = "row" id = "userStats">
 
-      <div class = "col s12" id = 'infoDesc'>
+        <img src="http://i.telegraph.co.uk/multimedia/archive/03491/Vladimir_Putin_1_3491835k.jpg" alt="profile picture">
 
-        <div class="row">
+        <div>
+          <p>
+            Username :
+          </p>
 
-          <divclass="col s8">
-            <input type="text" id="myInput"  placeholder="Search for names..">
-          </div>
+          <p>
+            Joined at :
+          </p>
 
-          <div class="col s4">
-            <a class="searchButton waves-effect waves-light btn">Search</a>
-          </div>
-
-
+          <a class="waves-effect waves-light btn">Message</a>
         </div>
 
-      </div>
     </section>
 
-    <section class = "row" id = "items">
-      <div id="your-class" class="col s12 your-class">
+    <hr />
 
+    <section class = "row" id = "rentIfno">
+
+      <div class = "col s6" id = "myItems">
+        <ul id = "itemList">
+
+        </ul>
+        <ul id = "itemBool">
+
+        </ul>
       </div>
+
+      <div class = "col s6" id = "rentedItems">
+        <ul id = "myRents">
+
+        </ul>
+        <ul id = "rentedReturnDate">
+
+        </ul>
+      </div>
+
     </section>
 
   </body>
-
-
-
-
-
 
 </html>
