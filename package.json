@@ -20,5 +20,8 @@
     "morgan": "~1.8.1",
     "pg": "^7.3.0",
     "serve-favicon": "~2.4.2"
+  },
+  "engines": {
+    "node": "v8.6.0"
   }
 }
