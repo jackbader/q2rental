@@ -24,7 +24,8 @@ nav {
 }
 #userStats a {
   display:inline-block;
-  margin-left: 12%;
+  margin-left: 8%;
+  width:20%;
 }
 hr {
   width: 90%;
