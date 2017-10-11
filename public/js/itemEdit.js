@@ -110,6 +110,7 @@ $(document).ready(() => {
         $('#daily_price').attr({
           value: item[0].daily_price
         })
+        $('#imgyo').attr('src', item[0].img_url)
     })
     .fail(() => {
       Materialize.toast('Unable to retrieve book', 3000);
