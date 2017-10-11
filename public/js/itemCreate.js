@@ -9,7 +9,7 @@ $(document).ready(() => {
         const title = $('#title').val()
         const desc = $('#desc').val()
         const daily_price = $('#daily_price').val()
-        const cat = $('#cat').val()
+        const cat = $('#dropdown').val()
         const img = $('#img')
         console.log(img[0].files[0])
 
