@@ -56,7 +56,7 @@ $(document).ready(() => {
 
     $.ajax(options)
       .done(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'userSignIn.html';
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
