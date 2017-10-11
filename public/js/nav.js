@@ -4,6 +4,22 @@ $(document).ready(() => {
 
   console.log('ready test')
 
+  $('#profileButton').click(function() {
+
+
+    $.getJSON('/token')
+      .done((data) => {
+        if (data.hasToken === false) {
+          Materialize.toast('You must be logged in to view that!', 3000);
+        } else {
+          window.location.href = `/userProfile.html?id=${data.cookies.userId}`;
+        }
+        console.log(data.hasToken)
+      })
+
+    console.log('test')
+  })
+
   $.getJSON('/token')
     .done((data) => {
       const $firstNavItems = $('.firstNavItem');

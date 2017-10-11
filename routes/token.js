@@ -41,10 +41,11 @@ router.post('/token', (req, res, next) => {
 
   knex('users')
     .where('email', email)
+    .orWhere('username', email)
     .first()
     .then((row) => {
       if (!row) {
-        throw boom.create(400, 'Bad email or password');
+        throw Materialize.toast('Bad email or password', 3000);
       }
 
       user = camelizeKeys(row);

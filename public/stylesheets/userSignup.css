@@ -3,3 +3,7 @@ body {
   width: 100%;
   /*background-color: red;*/
 }
+
+nav {
+  background-color: #6BBA54 !important;
+}
