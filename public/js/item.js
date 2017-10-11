@@ -1,9 +1,6 @@
 'use strict';
 $(document).ready(() => {
 
-  var express = require('express');
-  var app = express();
-
   const itemId = window.location.search.replace(/\D+/g, '')
 
   //if logged in
