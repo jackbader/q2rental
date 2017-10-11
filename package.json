@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "knex": "knex"
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "nodemon": "node ./bin/www"
   },
   "dependencies": {
     "bcrypt-as-promised": "^1.1.0",
