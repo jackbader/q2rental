@@ -1,6 +1,5 @@
 'use strict';
 $(document).ready(() => {
-  console.log('item page ready')
 
   const itemId = window.location.search.replace(/\D+/g, '')
 
@@ -8,19 +7,13 @@ $(document).ready(() => {
   $.getJSON('/token')
     .done((data) => {
 
-      console.log(data)
-
       if (data.hasToken) {
-        console.log('is logged in')
 
         //check if item is users
         let userId = data.cookies.userId
-        console.log('userid: ' + userId)
-        console.log('itemid: ' + itemId)
 
         $.getJSON(`/items/${itemId}`)
           .done((item) => {
-            console.log(item[0].owner_id)
             if (item[0].owner_id === userId) {
 
                       let editbutton = $('<a>')
@@ -39,9 +32,6 @@ $(document).ready(() => {
           .fail(() => {
             Materialize.toast('Unable to retrieve book', 3000);
           });
-      }
-      else {
-        console.log('is not logged in')
       }
     })
     .fail(($xhr) => {
@@ -67,7 +57,17 @@ $(document).ready(() => {
       $.getJSON('/token')
         .done((loggedIn) => {
           if (loggedIn) {
-
+            $('.rentButton').click(function() {
+              $.ajax({
+                method: "PATCH",
+                url: `/items/${item.id}`,
+                data: {rented: true},
+              })
+              .done(() => {
+                $('.rentButton').addClass('disabled')
+                $('.rentButton').text('Currently Rented')
+              })
+            })
           } else {
             $('.rentButton').click(function() {
               Materialize.toast('You must be logged in to rent!', 3000)
@@ -84,7 +84,6 @@ $(document).ready(() => {
 
   $.getJSON(`/items/${itemId}`)
   .done((item) => {
-    console.log(item)
     renderItem(item[0]);
     rentButton(item[0])
     //attachListeners(item);
