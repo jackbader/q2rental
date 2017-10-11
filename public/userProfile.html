@@ -22,7 +22,10 @@
 
       <!-- my js -->
     <script src = "js/nav.js"></script>
-        <script src = "js/profile.js"></script>
+    <script src = "js/profile.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/jquery-filestyle.min.css">
+    <script src="js/jquery-filestyle.min.js"></script>
 
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
@@ -54,7 +57,10 @@
 
     <section class = "row" id = "userStats">
 
-        <img src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder.jpg" alt="profile picture">
+        <img id="actualImg" src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder.jpg" alt="profile picture">
+        <!-- <a id='profileButton'><i class="material-icons prefix">add_a_photo</i></a> -->
+
+        <input id="profilePic" data-input="false" type="file" class="jfilestyle" data-buttonText="<i class='material-icons prefix'>add_a_photo</i>">
 
         <div>
           <p id="username">
@@ -68,10 +74,7 @@
 
         </div>
 
-        <div>
-
-          <a class="waves-effect waves-light btn">Message</a>
-          <a href = "createItem.html" class="waves-effect waves-light btn">Add New Item</a>
+        <div id="addButtonDiv">
 
         </div>
 

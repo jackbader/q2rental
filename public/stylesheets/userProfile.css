@@ -4,6 +4,11 @@ body {
   background-image: url("../img/whirlpool.png");
   /*background-color: blue;*/
 }
+
+#fileupload {
+  display: none;
+}
+
 nav {
   background-color: #6BBA54 !important;
 }
