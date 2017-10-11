@@ -31,6 +31,31 @@ router.get('/users/:id', (req, res, next) => {
 
 })
 
+router.patch('/users/:id', (req, res, next) => {
+  const {profile_img} = req.body
+
+  const id = req.params.id
+
+  knex('users')
+    .where('id', id)
+    .first()
+    .then((user) => {
+      let newobj = {
+        profile_img: profile_img,
+      }
+      return knex('users')
+        .update(newobj, '*')
+        .where('id', id);
+    })
+    .then((rows) => {
+        const user = rows[0];
+        res.send(user);
+    })
+    .catch((err) => {
+      next(err);
+    })
+})
+
 router.post('/users', (req, res, next) => {
 
   const {first_name, last_name, email, username, password} = req.body
