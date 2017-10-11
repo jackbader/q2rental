@@ -1,4 +1,14 @@
+
+
 $(document).ready(() => {
+
+  // cloudinary.config({
+  //   cloud_name: 'sample',
+  //   api_key: '874837483274837',
+  //   api_secret: 'a676b67565c6767a6767d6767f676fe1'
+  // });
+
+
 
 
   const itemId = window.QUERY_PARAMETERS.id;
@@ -28,6 +38,12 @@ $(document).ready(() => {
     if (!fileupload.hasClass('valid')) {
       return Materialize.toast('File image must not be blank', 3000);
     }
+
+    // cloudinary.uploader.upload(fileupload, function(result) {
+    //     console.log(result)
+    // });
+
+    //klfgsdjflshd
 
     let item = {
       title: title,
