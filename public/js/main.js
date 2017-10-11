@@ -4,6 +4,23 @@ $(document).ready(() => {
 
   $('#myInput').val('')
 
+  $('#profileButton').click(function() {
+
+
+    $.getJSON('/token')
+      .done((data) => {
+        if (data.hasToken === false) {
+          Materialize.toast('You must be logged in to view that!', 3000);
+        } else {
+
+        }
+        console.log(data.hasToken)
+      })
+
+    console.log('test')
+  })
+
+
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
