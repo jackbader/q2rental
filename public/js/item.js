@@ -1,6 +1,9 @@
 'use strict';
 $(document).ready(() => {
 
+  var express = require('express');
+  var app = express();
+
   const itemId = window.location.search.replace(/\D+/g, '')
 
   //if logged in
@@ -56,7 +59,7 @@ $(document).ready(() => {
     } else {
       $.getJSON('/token')
         .done((loggedIn) => {
-          if (loggedIn) {
+          if (loggedIn.hasToken) {
             $('.rentButton').click(function() {
               $.ajax({
                 method: "PATCH",
@@ -66,6 +69,7 @@ $(document).ready(() => {
               .done(() => {
                 $('.rentButton').addClass('disabled')
                 $('.rentButton').text('Currently Rented')
+                // window.location.href = 'paymentpage';
               })
             })
           } else {
@@ -81,11 +85,18 @@ $(document).ready(() => {
 
   }
 
+  const ownerBtn = function (item) {
+    $('#ownerBtn').on('click', () => {
+      window.location.href = `/userProfile.html?id=${item.owner_id}`;
+      console.log(item)
+    })
+  }
 
   $.getJSON(`/items/${itemId}`)
   .done((item) => {
-    renderItem(item[0]);
+    renderItem(item[0])
     rentButton(item[0])
+    ownerBtn(item[0])
     //attachListeners(item);
   })
   .fail(() => {
@@ -97,5 +108,7 @@ $(document).ready(() => {
   $(document).ready(function() {
     $('select').material_select();
   });
+
+
 
 })

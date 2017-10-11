@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Profile Page</title>
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+
+
+    <link rel="stylesheets/slick/slick-theme.css" rel = "stylesheet"/>
+
+
+      <!-- my css -->
+    <link href = "stylesheets/userProfile.css" rel = "stylesheet">
+
+      <!-- my js -->
+    <script src = "js/nav.js"></script>
+        <script src = "js/profile.js"></script>
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+          <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="firstNavItem"></li>
+          <li class="secondNavItem"></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class = "row" id = "userStats">
+
+        <img src= "<%= image %>" alt="profile picture"> 
+
+        <div>
+          <p id="username">
+
+            Username : <%= userName %>
+          </p>
+
+          <p id="joindate">
+            Joined at : <%= date %>
+          </p>
+
+        </div>
+
+        <div>
+
+          <a class="waves-effect waves-light btn">Message</a>
+          <a href = "createItem.html" class="waves-effect waves-light btn">Add New Item</a>
+
+        </div>
+
+    </section>
+
+  </body>
+
+</html>
