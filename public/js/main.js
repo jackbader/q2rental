@@ -12,7 +12,7 @@ $(document).ready(() => {
         if (data.hasToken === false) {
           Materialize.toast('You must be logged in to view that!', 3000);
         } else {
-
+          window.location.href = `/userProfile.html?id=${data.cookies.userId}`;
         }
         console.log(data.hasToken)
       })
