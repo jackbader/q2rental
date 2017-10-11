@@ -1,75 +1,72 @@
-(function() {
-  'use strict';
-
-  const bookId = window.QUERY_PARAMETERS.id;
-
-  if (!bookId) {
-    window.location.href = '/itemEdit.html';
-  }
-
-  const renderBook = function(item) {
-    $('#title').val(item.title);
-    $('#desc').text(item.description);
-    $('#daily_price').val(item.daily_price);
-    $('#cancel').attr('href', `/book.html?id=${book.id}`);
-
-    Materialize.updateTextFields();
-  };
-
-  const attachListeners = function(book) {
-    // eslint-disable-next-line max-statements
-    $('#editBookForm').submit((event) => {
-      event.preventDefault();
-
-      const title = $('#title').val().trim();
-      const desc = $('#desc').val().trim();
-      const dailyPrice = $('#daily_price').val().trim();
+$(document).ready(() => {
 
 
-      if (!title) {
-        return Materialize.toast('Title must not be blank', 3000);
-      }
+  const itemId = window.QUERY_PARAMETERS.id;
 
-      if (!author) {
-        return Materialize.toast('Author must not be blank', 3000);
-      }
+  $('#submitButton').click(function(event) {
+    event.preventDefault()
 
-      if (!genre) {
-        return Materialize.toast('Genre must not be blank', 3000);
-      }
+    const title = $('#title').val()
+    const desc = $('#desc').val()
+    const daily_price = $('#daily_price').val()
+    const dropdown = $('#dropdown').val()
+    const fileupload = $('#fileupload')
+    console.log(fileupload)
 
-      if (!description) {
-        return Materialize.toast('Description must not be blank', 3000);
-      }
+    if (!title) {
+      return Materialize.toast('Title must not be blank', 3000);
+    }
+    if (!desc) {
+      return Materialize.toast('Description must not be blank', 3000);
+    }
+    if (!daily_price) {
+      return Materialize.toast('Daily Price must not be blank', 3000);
+    }
+    if (!dropdown) {
+      return Materialize.toast('Catergory must not be blank', 3000);
+    }
+    if (!fileupload.hasClass('valid')) {
+      return Materialize.toast('File image must not be blank', 3000);
+    }
 
-      if (!coverUrl) {
-        return Materialize.toast('Cover URL must not be blank', 3000);
-      }
+    let item = {
+      title: title,
+      desc: desc,
+      daily_price: daily_price,
+      cat: dropdown,
+      img_url: 'test',
+    }
 
-      const options = {
-        contentType: 'application/json',
-        data: JSON.stringify({ title, author, genre, description, coverUrl }),
-        dataType: 'json',
-        type: 'PATCH',
-        url: `/books/${book.id}`
-      };
+    const jaxObj = {
+      method: "PATCH",
+      url: `/items/${itemId}`,
+      data: item,
+    }
+    $.ajax(jaxObj)
+      .done(() => {
+        console.log('got em')
+      })
+      .fail(($xhr) => {
+        Materialize.toast($xhr.responseText, 3000);
+      })
 
-      $.ajax(options)
-        .done(() => {
-          window.location.href = `/book.html?id=${book.id}`;
+
+  })
+
+  $.getJSON(`/items/${itemId}`)
+    .done((item) => {
+        const title = item[0].title
+        $('#title').attr({
+          value: title
         })
-        .fail(($xhr) => {
-          Materialize.toast($xhr.responseText, 3000);
-        });
-    });
-  };
-
-  $.getJSON(`/books/${bookId}`)
-    .done((book) => {
-      renderBook(book);
-      attachListeners(book);
+        $('#desc').attr({
+          value: item[0].desc
+        })
+        $('#daily_price').attr({
+          value: item[0].daily_price
+        })
     })
     .fail(() => {
       Materialize.toast('Unable to retrieve book', 3000);
     });
-})();
+})
