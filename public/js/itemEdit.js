@@ -2,6 +2,8 @@
 
 $(document).ready(() => {
 
+
+
   // cloudinary.config({
   //   cloud_name: 'sample',
   //   api_key: '874837483274837',
@@ -21,7 +23,8 @@ $(document).ready(() => {
     const daily_price = $('#daily_price').val()
     const dropdown = $('#dropdown').val()
     const fileupload = $('#fileupload')
-    console.log(fileupload)
+    console.log(fileupload.files)
+    console.log()
 
     if (!title) {
       return Materialize.toast('Title must not be blank', 3000);
