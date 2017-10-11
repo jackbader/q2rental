@@ -46,6 +46,7 @@ $(document).ready(() => {
     $(document).prop('title', item.title);
     $('.img').attr({src: item.img_url})
     $('.desc').text(item.desc)
+    $('.title').text(item.title)
   }
 
   const rentButton = function(item) {

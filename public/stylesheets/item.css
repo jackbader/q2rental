@@ -11,12 +11,6 @@ nav {
   margin-top: 5%;
   margin-left: 10%;
 }
-#displayInfo p {
-  width:40%;
-  margin-top: 18%;
-  margin-left: 8%;
-  line-height: 220%;
-}
 #userInfo a:first-child{
   margin-top: 5%;
   margin-left: 23%;
@@ -24,4 +18,16 @@ nav {
 #userInfo a:not(:first-child){
   margin-top: 5%;
   margin-left: 10%;
+}
+.desc {
+  width:40%;
+  margin-top: 10%;
+  margin-left: 8%;
+  line-height: 220%;
+}
+.title{
+  width:40%;
+  margin-top: 30%;
+  margin-left: 8%;
+  line-height: 220%;
 }
