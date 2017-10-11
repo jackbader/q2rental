@@ -59,7 +59,11 @@ $(document).ready(() => {
         $('#joindate').text("joindate: " + (date.getMonth() +1) + '/' + new Date(join).getDate() + '/' + date.getFullYear())
 
         //update photo
-        $('#actualImg').attr('src', user[0].profile_img)
+        if (!user[0].profile_img) {
+
+        } else {
+          $('#actualImg').attr('src', user[0].profile_img)
+        }
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
@@ -73,20 +77,27 @@ $(document).ready(() => {
           //is not logged in
           getUser(user_id)
           loadRentables(user_id)
+          $('#profilePic').hide()
+          $('.jfilestyle').hide()
         } else {
           // is logged in // check if matches QUERY_PARAMETERS
           const user_id = data.cookies.userId
           if (userId == user_id) {
+            console.log('user is viewing their own page')
             getUser(user_id)
             //user is viewing their page
             loadRentables(user_id)
             //add new item button
-            let a = $('<a>')
-            a.attr('href', "createItem.html")
-            a.addClass("waves-effect waves-light btn")
-            a.text('Add New Item')
-            $("#addButtonDiv").append(a)
-            //add change profile pic button
+            //<input id="profilePic" data-input="false" type="file" class="jfilestyle" data-buttonText="<i class='material-icons prefix'>add_a_photo</i>">
+            // let input = $('<input>')
+            // input.attr('id', 'profilePic')
+            // input.attr('data-input', "false")
+            // input.attr('type', 'false')
+            // input.addClass("jfilestyle")
+            // input.attr('data-buttonText', "<i class='material-icons prefix'>add_a_photo</i>")
+            // $('#userStats').append(input)
+
+            //change profile pic button
             let editPic = $('<a>')
             editPic.addClass("waves-effect waves-light btn")
             $('.content').append(editPic)
@@ -95,6 +106,8 @@ $(document).ready(() => {
             // show query parameters
             getUser(userId)
             loadRentables(userId)
+            $('#profilePic').hide()
+            $('.jfilestyle').hide()
           }
         }
       })
