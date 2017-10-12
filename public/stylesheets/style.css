@@ -36,11 +36,9 @@ nav {
   margin-left: 35%;
 }
 #items {
+  background-color: #F7F7F7;
   border-top: 3px solid #C2A68C;
   border-bottom: 3px solid #C2A68C;
-}
-.card:hover {
-  background-color: #1B7E37;
 }
 #dropdown {
   background-color: #7F9895;
@@ -51,8 +49,8 @@ nav {
   color:  #C2A68C;
   padding-left: 28%;
 }
-.card {
-  background-image: url("../img/halftone.png");
+.card:hover {
+  /*background-color: #1B7E37;*/
 }
 .card img {
   width:60%;
