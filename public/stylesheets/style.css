@@ -45,16 +45,5 @@ nav {
   color:  #C2A68C;
   padding-left: 28%;
 }
-.card {
-  height:250px;
-}
-.card:hover {
-  /*background-color: #1B7E37;*/
-}
-.card img {
-  object-fit: contain;
-  /*width:50%;
-  height:auto;
-  margin-left: 18%;*/
-}
+
 bs

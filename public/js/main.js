@@ -41,6 +41,8 @@ $(document).ready(() => {
           $card.append($cardContent)
           $items.append($card);
 
+          // $items.append()
+
           $card.click(function() {
             window.location.href = `item.html?id=${item.id}`;
           })
