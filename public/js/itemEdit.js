@@ -85,8 +85,9 @@ $(document).ready(() => {
               data: item,
             }
             $.ajax(jaxObj)
-              .done(() => {
+              .done((data) => {
                 console.log('got em')
+                window.location.href = `/item.html?=${data.id}`;
               })
               .fail(($xhr) => {
                 Materialize.toast($xhr.responseText, 3000);
