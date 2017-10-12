@@ -52,6 +52,8 @@ $(document).ready(() => {
     $.ajax(jaxObj)
       .done((user) => {
 
+        const email = user[0].email
+        $('#Email').text('email: ' + email)
         const username = user[0].username
         $('#username').text('Username: ' + username)
         const join = user[0].created_at
