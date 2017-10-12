@@ -1,9 +1,64 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   width: 100%;
-  /*background-color: red;*/
+  background-image: url("../img/halftone.png");
+  font-size: 3vh;
+  color: #7F9895;
 }
-
+.brand-logo {
+  margin-left: 3%;
+}
 nav {
-  background-color: #6BBA54 !important;
+  background-color: #F7B66F !important;
+}
+form {
+  width:80% !important;
+  margin-top: 5%;
+  margin-left: 10%!important;
+}
+.input-field input[type=text]:focus + label {
+     color: #EF7858 !important;
+}
+.input-field input[type=text] + label {
+     color: #7F9895 !important;
+}
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #EF7858 !important;
+ box-shadow: 0 1px 0 0 #EF7858 !important;
+}
+.input-field input[type=text] {
+ border-bottom: 1px solid #7F9895 !important;
+ box-shadow: 0 1px 0 0 #7F9895 !important;
+}
+.input-field input[type=password]:focus + label {
+     color: #EF7858 !important;
+}
+.input-field input[type=password] + label {
+     color: #7F9895 !important;
+}
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #EF7858 !important;
+ box-shadow: 0 1px 0 0 #EF7858 !important;
+}
+.input-field input[type=password] {
+ border-bottom: 1px solid #7F9895 !important;
+ box-shadow: 0 1px 0 0 #7F9895 !important;
+}
+.input-field input[type=email]:focus + label {
+     color: #EF7858 !important;
+}
+.input-field input[type=email] + label {
+     color: #7F9895 !important;
+}
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #EF7858 !important;
+ box-shadow: 0 1px 0 0 #EF7858 !important;
+}
+.input-field input[type=email] {
+ border-bottom: 1px solid #7F9895 !important;
+ box-shadow: 0 1px 0 0 #7F9895 !important;
+}
+button {
+  float:right;
+  background-color: #7F9895 !important;
 }

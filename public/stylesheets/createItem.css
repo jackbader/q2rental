@@ -11,16 +11,10 @@ body {
 nav {
   background-color: #F7B66F !important;
 }
-#picture {
-  margin-top: 8%;
-}
-#picture img{
-  width:70%;
-  margin-left: 10%;
-}
 #form {
-  width:40%;
+  width:80%;
   margin-top: 8%;
+  margin-left: 10%;
 }
 .input-field input[type=text]:focus + label {
      color: #EF7858 !important;
@@ -30,6 +24,9 @@ nav {
  box-shadow: 0 1px 0 0 #EF7858 !important;
 }
 #dropdown {
+  width:25%;
+  margin-left: 2%;
+  margin-bottom: 2%;
   background-color: #7F9895;
   color: #FFFFFF;
 }
