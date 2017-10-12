@@ -90,14 +90,12 @@ $(document).ready(() => {
             //user is viewing their page
             loadRentables(user_id)
             //add new item button
-            //<input id="profilePic" data-input="false" type="file" class="jfilestyle" data-buttonText="<i class='material-icons prefix'>add_a_photo</i>">
-            // let input = $('<input>')
-            // input.attr('id', 'profilePic')
-            // input.attr('data-input', "false")
-            // input.attr('type', 'false')
-            // input.addClass("jfilestyle")
-            // input.attr('data-buttonText', "<i class='material-icons prefix'>add_a_photo</i>")
-            // $('#userStats').append(input)
+            //<a class="waves-effect waves-light btn">button</a>
+            let button = $('<a>')
+            button.addClass('waves-effect waves-light btn')
+            button.text('Add new item')
+            button.attr('href', '/createItem.html')
+            $('#userStats').append(button)
 
             //change profile pic button
             let editPic = $('<a>')
