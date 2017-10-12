@@ -10,6 +10,8 @@ $(document).ready(() => {
       .done((items) => {
         const $items = $('.your-class');
 
+
+
         for (const item of items) {
         const title = item.title
 
@@ -31,6 +33,9 @@ $(document).ready(() => {
           const $p = $('<p>')
           $p.text(item.desc)
           const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
+
+          let color = "blue"
+          $card.attr('style', `background-color: ${color}`)
 
           $card.append($anchor);
           $card.append($img);
@@ -65,7 +70,7 @@ $(document).ready(() => {
       })
       .tooltip();
 
-    const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
+    const $card = $('<div>').addClass("card card-image col s2 m2 l2")
     const $cardContent = $('<div>').addClass('card-content black-text')
     const $span = $('<span>').addClass('card-title')
     $span.text(item.title)
@@ -88,6 +93,12 @@ $(document).ready(() => {
 
     return $card
   }
+
+  function colorSetter () {
+    let color = "blue"
+    $(".card").style.backgroundColor = color
+  }
+
   $('#myInput').keydown(function (e) {
     e.stopPropagation();
     if (e.keyCode === 40) {
