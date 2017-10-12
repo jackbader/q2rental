@@ -1,16 +1,40 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  width: 100%;
-  background-image: url("../img/whirlpool.png");
-  /*background-color: blue;*/
+.edit {
+	padding-top: 7px;
+	padding-right: 7px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
 }
 
+.profile-pic {
+	position: relative;
+	display: inline-block;
+}
+
+.profile-pic:hover .edit {
+	display: block;
+}
+
+.edit a {
+	color: #000;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  width: 100%;
+  background-image: url("../img/halftone.png");
+  font-size: 3vh;
+  color: #7F9895;
+}
+.brand-logo {
+  margin-left: 3%;
+}
+nav {
+  background-color: #F7B66F !important;
+}
 #fileupload {
   display: none;
-}
-
-nav {
-  background-color: #6BBA54 !important;
 }
 #userStats img {
   width:40%;
@@ -22,26 +46,20 @@ nav {
   margin-bottom: 2%;
 }
 #userStats p{
-  display:inline-block;
   margin-left: 4%;
   margin-right: 4%;
 }
 #userStats a {
-  display:inline-block;
-  margin-left: 8%;
+  margin-left: 40%;
   width:20%;
+  background-color: #7F9895 !important;
 }
 hr {
   width: 90%;
   margin-bottom: 3%;
 }
 #myItems {
-  background-color: grey;
+  background-color:  #F7B66F ;
   width:40%;
   margin-left: 30%;
-}
-#rentedItems {
-  background-color: grey;
-  width:30%;
-  margin-left: 5%;
 }

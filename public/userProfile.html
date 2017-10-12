@@ -57,48 +57,52 @@
 
     <section>
       <div class="row" style="margin-top: 50px;">
-        <div class="col s4">
+        <div class="col s1">
 
         </div>
         <div class="col s4">
-            <div class="image" style="text-align: center;">
-              <img style="width:300px; height:300px;" src="http://materializecss.com/images/sample-1.jpg" alt="">
+
+            <div class="profile-pic">
+              <img id="actualImg" style="width:300px; height:300px;" src="http://materializecss.com/images/sample-1.jpg" alt="">
+
+              <div class="edit">
+                <label for="profilePic">
+                    <i style="color: white;"class="large material-icons">add</i>
+                </label>
+                <input style="display: none;" id="profilePic" type="file">
+              </div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s7" id = "userStats">
+
+          <div>
+            <p id="username">
+
+              Username :
+            </p>
+
+            <p id="joindate">
+              Joined at :
+            </p>
+
+            <p id="Email">
+              Email :
+            </p>
+
+          </div>
+
+          <div id="addButtonDiv">
+
+
+          </div>
+
 
         </div>
+
       </div>
-    </section>
-
-    <section class = "row" id = "userStats">
-
-
-
-        <!-- <input id="profilePic" data-input="false" type="file" class="jfilestyle" data-buttonText="<img id='actualImg' src='http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder.jpg' alt='profile picture'>"> -->
-
-        <div style="text-align: center;">
-          <p id="username">
-
-            Username :
-          </p>
-
-          <p id="joindate">
-            Joined at :
-          </p>
-
-          <p id="Email">
-            Email :
-          </p>
-
-        </div>
-
-        <div id="addButtonDiv">
-          
-
-        </div>
 
     </section>
+
 
     <hr />
 
