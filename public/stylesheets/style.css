@@ -1,37 +1,33 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   width: 100%;
-  background-image: url("../img/whirlpool.png");
+  background-image: url("../img/halftone.png");
+  font-size: 3vh;
   /*background-color: blue;*/
 }
 
 nav {
-  background-color: #6BBA54 !important;
+  background-color: #F7B66F !important;
 }
-
+.homeBtn {
+  margin-left: 2%;
+}
 #your-class .card {
   margin: 10px !important;
 }
-
 #profileIcon {
   position:relative;
   top:5%;
 }
-
-#infoArea{
-  font-size: 3vh;
-  margin:0;
-}
-
 #infoTitle {
-  font-size: 5.5vh;
+  font-size: 7vh;
   width:30%;
   text-align: center;
   padding-top: 10%;
   margin-left: 35%;
-  color: #1B7E37;
+  color: #EF7858;
+  text-shadow: 2px 2px 3px #7F9895;
 }
-
 #infoDesc {
   width:30%;
   text-align: center;
@@ -39,27 +35,28 @@ nav {
   padding-bottom: 10%;
   margin-left: 35%;
 }
-
 #items {
-  background-color: #6BBA54;
+  border-top: 3px solid #C2A68C;
+  border-bottom: 3px solid #C2A68C;
 }
 .card:hover {
   background-color: #1B7E37;
 }
-
-#searchBar {
-    background-color: #1B7E37;
-    width: 30%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
-}
 #dropdown {
-  background-color: #6BBA54;
+  background-color: #7F9895;
   color: #FFFFFF;
 }
 #myInput::placeholder {
-  color: #FF8731;
+  font-size: 3vh;
+  color:  #C2A68C;
+  padding-left: 28%;
+}
+.card {
+  background-image: url("../img/halftone.png");
+}
+.card img {
+  width:60%;
+  height:auto;
+  margin-left: 18%;
 }
 bs
