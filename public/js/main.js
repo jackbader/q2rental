@@ -4,7 +4,7 @@ $(document).ready(() => {
 
   $('#myInput').val('')
 
-//djklsfhkjsdf
+//djklsfhkjsdflkdhsfksldfglsd
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
