@@ -6,32 +6,29 @@ $(document).ready(() => {
   $.getJSON('/token')
     .done((data) => {
 
-      if (data.hasToken) {
+      //check if item is users
+      let userId = data.cookies.userId
 
-        //check if item is users
-        let userId = data.cookies.userId
+      $.getJSON(`/items/${itemId}`)
+        .done((item) => {
+          if (item[0].owner_id === userId) {
 
-        $.getJSON(`/items/${itemId}`)
-          .done((item) => {
-            if (item[0].owner_id === userId) {
+            let editbutton = $('<a>')
+            editbutton.addClass('waves-effect waves-light btn-large')
+            editbutton.attr('id', 'ownerBtn')
+            editbutton.text('Edit')
+            editbutton.attr({
+              href: `/itemEdit.html?id=${item[0].id}`,
+            })
+            .tooltip();
+            $('.buttonRow').append(editbutton)
 
-                      let editbutton = $('<a>')
-                      editbutton.addClass('waves-effect waves-light btn-large')
-                      editbutton.text('Edit')
-                      editbutton.attr({
-                        href: `/itemEdit.html?id=${item[0].id}`,
-                        'data-delay': '50',
-                        'data-tooltip': item.title
-                      })
-                      .tooltip();
-                      $('.buttonRow').append(editbutton)
-            }
+          }
 
-          })
-          .fail(() => {
-            Materialize.toast('Unable to retrieve book', 3000);
-          });
-      }
+        })
+        .fail(() => {
+          Materialize.toast('Unable to retrieve book', 3000);
+        });
     })
     .fail(($xhr) => {
       Materialize.toast($xhr.responseText, 3000);
