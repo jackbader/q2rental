@@ -5,12 +5,8 @@ body {
   font-size: 3vh;
   /*background-color: blue;*/
 }
-
 nav {
   background-color: #F7B66F !important;
-}
-.homeBtn {
-  margin-left: 2%;
 }
 #your-class .card {
   margin: 10px !important;
@@ -49,12 +45,16 @@ nav {
   color:  #C2A68C;
   padding-left: 28%;
 }
+.card {
+  height:250px;
+}
 .card:hover {
   /*background-color: #1B7E37;*/
 }
 .card img {
-  width:60%;
+  object-fit: contain;
+  /*width:50%;
   height:auto;
-  margin-left: 18%;
+  margin-left: 18%;*/
 }
 bs

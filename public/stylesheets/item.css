@@ -1,23 +1,20 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   width: 100%;
-  /*background-color: red;*/
+  background-image: url("../img/halftone.png");
+  font-size: 3vh;
+  color: #7F9895;
+}
+.brand-logo {
+  margin-left: 3%;
 }
 nav {
-  background-color: #6BBA54 !important;
+  background-color: #F7B66F !important;
 }
 #displayInfo img {
   width:30%;
-  margin-top: 5%;
-  margin-left: 10%;
-}
-#userInfo a:first-child{
-  margin-top: 5%;
-  margin-left: 23%;
-}
-#userInfo a:not(:first-child){
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 10%;
+  margin-left: 20%;
 }
 .desc {
   width:40%;
@@ -27,7 +24,26 @@ nav {
 }
 .title{
   width:40%;
-  margin-top: 30%;
+  margin-top: 18%;
   margin-left: 8%;
   line-height: 220%;
 }
+#userInfo {
+  margin-bottom: 5%;
+}
+#rentBtn {
+  background-color: #7F9895;
+  margin-top: 5%;
+  margin-left: 23%;
+}
+#ownerBtn {
+  background-color: #7F9895;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+
+
+
+
+bs
