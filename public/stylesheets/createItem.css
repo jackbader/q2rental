@@ -29,6 +29,10 @@ nav {
  border-bottom: 1px solid #EF7858 !important;
  box-shadow: 0 1px 0 0 #EF7858 !important;
 }
+#dropdown {
+  background-color: #7F9895;
+  color: #FFFFFF;
+}
 .send{
   float: right;
   background-color:#7F9895 !important;
