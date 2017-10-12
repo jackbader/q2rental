@@ -6,11 +6,9 @@ $(document).ready(() => {
 
   $('#loginForm').submit((event) => {
 
-    console.log('lol')
     event.preventDefault();
 
     const email = $('#email').val();
-    console.log(email)
     const password = $('#password').val();
 
     if (!email) {
@@ -30,8 +28,13 @@ $(document).ready(() => {
     };
 
     $.ajax(options)
-      .done(() => {
-        window.location.href = '/index.html';
+      .done((obj) => {
+        console.log(obj)
+        if (obj.error) {
+          Materialize.toast(obj.error, 3000)
+        } else {
+          window.location.href = '/index.html';
+        }
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);

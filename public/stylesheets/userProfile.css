@@ -16,16 +16,15 @@ nav {
   width:40%;
   border-radius: 25px;
   margin-top: 10%;
-  margin-left: 28%;
 }
 #userStats div {
-  margin-top: 3%;
-  margin-left: 23%;
+  margin-top: 2%;
   margin-bottom: 2%;
 }
 #userStats p{
   display:inline-block;
-  margin-left: 8%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 #userStats a {
   display:inline-block;

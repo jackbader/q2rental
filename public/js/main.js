@@ -45,16 +45,38 @@ $(document).ready(() => {
             $card.click(function() {
               window.location.href = `item.html?id=${item.id}`;
             })
-          }
-          $('.your-class').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-          });
-        })
-        .fail(() => {
-          Materialize.toast('Unable to retrieve items', 3000);
+
+            .tooltip();
+
+          const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
+          $card.attr('style', 'background-color: blue;')
+          const $cardContent = $('<div>').addClass('card-content black-text')
+          const $span = $('<span>').addClass('card-title')
+          $span.text(item.title)
+          const $pPrice = $('<p>')
+          $pPrice.text("$" + item.daily_price + " a day.")
+          const $p = $('<p>')
+          $p.text(item.desc)
+          const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
+
+          $card.append($anchor);
+          $card.append($img);
+          $cardContent.append($span)
+          $cardContent.append($pPrice)
+          $cardContent.append($p)
+          $card.append($cardContent)
+          $items.append($card);
+
+          $card.click(function() {
+            window.location.href = `item.html?id=${item.id}`;
+          })
+        }
+        $('.your-class').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+
         });
   }
 
