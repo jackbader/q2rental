@@ -1,24 +1,38 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   width: 100%;
-  background-image: url("../img/whirlpool.png");
-  /*background-color: blue;*/
+  background-image: url("../img/halftone.png");
+  font-size: 3vh;
+  color: #7F9895;
+}
+.brand-logo {
+  margin-left: 3%;
 }
 nav {
-  background-color: #6BBA54 !important;
+  background-color: #F7B66F !important;
 }
 #picture {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 #picture img{
   width:70%;
-  margin-top: 3%;
   margin-left: 10%;
 }
 #form {
   width:40%;
-  margin-top: 10%;
+  margin-top: 8%;
 }
-button{
-  float:right;
+.input-field input[type=text]:focus + label {
+     color: #EF7858 !important;
+}
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #EF7858 !important;
+ box-shadow: 0 1px 0 0 #EF7858 !important;
+}
+.send{
+  float: right;
+  background-color:#7F9895 !important;
+}
+.btn {
+  background-color:#7F9895 !important;
 }
