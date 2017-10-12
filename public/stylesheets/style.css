@@ -9,6 +9,10 @@ nav {
   background-color: #6BBA54 !important;
 }
 
+#your-class .card {
+  margin: 10px !important;
+}
+
 #profileIcon {
   position:relative;
   top:5%;
