@@ -5,6 +5,10 @@
     background: #fff url('./ajax-loader.gif') center center no-repeat;
 }
 
+.slick-cloned {
+  display: none;
+}
+
 /* Icons */
 @font-face
 {
