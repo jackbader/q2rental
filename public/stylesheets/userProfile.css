@@ -1,3 +1,25 @@
+.edit {
+    padding-top: 7px;
+    padding-right: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+.profile-pic {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic:hover .edit {
+    display: block;
+}
+
+.edit a {
+    color: #000;
+}
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   width: 100%;
