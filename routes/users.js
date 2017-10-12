@@ -63,29 +63,27 @@ router.post('/users', (req, res, next) => {
 
 
   if (!email || !email.trim()) {
-    return next(boom.create(400, 'Email must not be blank'));
+    res.send({error: 'Email must not be blank'})
   }
 
   if (!password || password.length < 8) {
-    return next(boom.create(
-      400,
-      'Password must be at least 8 characters long'
-    ));
+    res.send({error: 'Password must be at least 8 characters long'})
+
   }
 
   if (!username || username.length < 8) {
-    return next(boom.create(
-      400,
-      'username must be at least 8 characters long'
-    ));
+    res.send({error: 'Username must be at least 8 characters long'})
   }
 
   knex('users')
     .where('email', email)
+    .orWhere('username', username)
     .first()
     .then((user) => {
       if (user) {
-        throw boom.create(400, 'Email already exists');
+
+        res.send({error: 'Email or username is already taken!'})
+        //throw boom.create(400, 'Email already exists', "test");
       }
 
       return bcrypt.hash(password, 12);

@@ -30,11 +30,11 @@ router.post('/token', (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !email.trim()) {
-    return next(boom.create(400, 'Email must not be blank'));
+    res.send({error: 'Email must not be blank'})
   }
 
   if (!password || !password.trim()) {
-    return next(boom.create(400, 'Password must not be blank'));
+    res.send({error: 'Password must not be blank'})
   }
 
   let user;
@@ -45,7 +45,7 @@ router.post('/token', (req, res, next) => {
     .first()
     .then((row) => {
       if (!row) {
-        throw Materialize.toast('Bad email or password', 3000);
+        return res.send({error: 'That email or username does not exist!'})
       }
 
       user = camelizeKeys(row);
@@ -69,7 +69,7 @@ router.post('/token', (req, res, next) => {
       res.send(user);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
-      throw boom.create(400, 'Bad email or password');
+      res.send({error: 'Bad password!'})
     })
     .catch((err) => {
       next(err);

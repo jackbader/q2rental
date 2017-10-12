@@ -1,4 +1,3 @@
-'use strict';
 $(document).ready(() => {
 
   const itemId = window.location.search.replace(/\D+/g, '')

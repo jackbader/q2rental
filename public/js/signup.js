@@ -1,11 +1,7 @@
 $(document).ready(() => {
 
-  console.log('test')
-  'use strict';
-
-  // eslint-disable-next-line max-statements
+  //On Submit Sign up form
   $('#signUpForm').submit((event) => {
-    console.log('test')
     event.preventDefault();
 
     const first_name = $('#firstName').val().trim();
@@ -44,8 +40,6 @@ $(document).ready(() => {
       );
     }
 
-
-
     const options = {
       contentType: 'application/json',
       data: JSON.stringify({ first_name, last_name, email, password, username }),
@@ -55,8 +49,13 @@ $(document).ready(() => {
     };
 
     $.ajax(options)
-      .done(() => {
-        window.location.href = 'userSignIn.html';
+      .done((obj) => {
+        if (obj.error) {
+          Materialize.toast(obj.error, 3000)
+          return;
+        } else {
+          window.location.href = 'userSignIn.html';
+        }
       })
       .fail(($xhr) => {
         Materialize.toast($xhr.responseText, 3000);
