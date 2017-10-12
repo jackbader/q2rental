@@ -8,26 +8,10 @@ $(document).ready(() => {
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
+
         const $items = $('.your-class');
 
-
-          const green = "#4FCCB2"
-          const orange = "#F3AA4E"
-          const blue = "#42BADF"
-          const red = "#EF7858"
-          const colorPalet = [green, orange, blue, red]
-
-        for (var c = 0; c < colorPalet.length;) {
-
-          if (c === colorPalet.length -1) {
-            c = 0
-          }
-
-          var color = colorPalet[c]
-        }
-
         for (const item of items) {
-          c++
 
           const title = item.title
 
@@ -49,8 +33,6 @@ $(document).ready(() => {
             const $p = $('<p>')
             $p.text(item.desc)
             const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
-
-            // $card.attr('style', `background-color: ${color}`)
 
             $card.append($anchor);
             $card.append($img);
@@ -107,11 +89,6 @@ $(document).ready(() => {
     })
 
     return $card
-  }
-
-  function colorSetter () {
-    let color = "blue"
-    $(".card").style.backgroundColor = color
   }
 
   $('#myInput').keydown(function (e) {
