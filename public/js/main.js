@@ -11,54 +11,69 @@ $(document).ready(() => {
         const $items = $('.your-class');
 
 
+          const green = "#4FCCB2"
+          const orange = "#F3AA4E"
+          const blue = "#42BADF"
+          const red = "#EF7858"
+          const colorPalet = [green, orange, blue, red]
+
+        for (var c = 0; c < colorPalet.length;) {
+
+          if (c === colorPalet.length -1) {
+            c = 0
+          }
+
+          var color = colorPalet[c]
+        }
 
         for (const item of items) {
-        const title = item.title
+          c++
+
+          const title = item.title
 
 
-          const $anchor = $('<a>')
-            .attr({
-              href: `/item.html?id=${item.id}`,
-              'data-delay': '50',
-              'data-tooltip': item.title
+            const $anchor = $('<a>')
+              .attr({
+                href: `/item.html?id=${item.id}`,
+                'data-delay': '50',
+                'data-tooltip': item.title
+              })
+              .tooltip();
+
+            const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
+            const $cardContent = $('<div>').addClass('card-content black-text')
+            const $span = $('<span>').addClass('card-title')
+            $span.text(item.title)
+            const $pPrice = $('<p>')
+            $pPrice.text("$" + item.daily_price + " a day.")
+            const $p = $('<p>')
+            $p.text(item.desc)
+            const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
+
+            // $card.attr('style', `background-color: ${color}`)
+
+            $card.append($anchor);
+            $card.append($img);
+            $cardContent.append($span)
+            $cardContent.append($pPrice)
+            $cardContent.append($p)
+            $card.append($cardContent)
+            $items.append($card);
+
+            $card.click(function() {
+              window.location.href = `item.html?id=${item.id}`;
             })
-            .tooltip();
-
-          const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
-          const $cardContent = $('<div>').addClass('card-content black-text')
-          const $span = $('<span>').addClass('card-title')
-          $span.text(item.title)
-          const $pPrice = $('<p>')
-          $pPrice.text("$" + item.daily_price + " a day.")
-          const $p = $('<p>')
-          $p.text(item.desc)
-          const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
-
-          let color = "blue"
-          $card.attr('style', `background-color: ${color}`)
-
-          $card.append($anchor);
-          $card.append($img);
-          $cardContent.append($span)
-          $cardContent.append($pPrice)
-          $cardContent.append($p)
-          $card.append($cardContent)
-          $items.append($card);
-
-          $card.click(function() {
-            window.location.href = `item.html?id=${item.id}`;
-          })
-        }
-        $('.your-class').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000,
+          }
+          $('.your-class').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+          });
+        })
+        .fail(() => {
+          Materialize.toast('Unable to retrieve items', 3000);
         });
-      })
-      .fail(() => {
-        Materialize.toast('Unable to retrieve items', 3000);
-      });
   }
 
   function createCard(item) {

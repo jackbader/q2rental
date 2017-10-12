@@ -36,6 +36,7 @@ nav {
   margin-left: 35%;
 }
 #items {
+  background-color: #F7F7F7;
   border-top: 3px solid #C2A68C;
   border-bottom: 3px solid #C2A68C;
 }
@@ -50,9 +51,6 @@ nav {
 }
 .card:hover {
   /*background-color: #1B7E37;*/
-}
-.blue{
-  background-color: #7F9895 !important;
 }
 .card img {
   width:60%;
