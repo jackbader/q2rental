@@ -26,6 +26,7 @@ $(document).ready(() => {
           if (item.cat == cat) {
             //add item
             let $card = createCard(item)
+
             $items.append($card)
           }
         }
@@ -93,7 +94,7 @@ $(document).ready(() => {
             i = 1
           }
 
-          const $card = (`<a href= item.html?id=${item.id}>` +
+          const $card = (`<a class = theCard href= item.html?id=${item.id}>` +
                           "<div class = col s5 m5 l5>" +
                             `<div style = background-color:${color}; class = card>` +
                               "<div class = card-title>" +
@@ -103,7 +104,7 @@ $(document).ready(() => {
                               `<img id = pic src = ${item.img_url} alt = ${item.title}>` +
                               "</div>" +
                               "<div class = cInfo>" +
-                              "<p id = desc>" + item.desc + "</p>" +
+                              // "<p id = desc>" + item.desc + "</p>" +
                               "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
                               "</div>" +
                             "</div>" +
@@ -157,7 +158,7 @@ $(document).ready(() => {
     // $card.append($cardContent)
     const $card = (`<a href= item.html?id=${item.id}>` +
                     "<div class = col s5 m5 l5>" +
-                      "<div class = card>" +
+                      "<div style = background-color:#7F9895; class = card>" +
 
                         "<div class = card-title>" +
                         "<span>" + item.title + "</span>" +
@@ -168,7 +169,7 @@ $(document).ready(() => {
                         "</div>" +
 
                         "<div class = cInfo>" +
-                        "<p id = desc>" + item.desc + "</p>" +
+                        // "<p id = desc>" + item.desc + "</p>" +
                         "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
                         "</div>" +
 
@@ -244,7 +245,9 @@ $(document).ready(() => {
                       console.log('undefined yo')
                       alreadyin = false
                     } else {
-                      let name = $($div).find('img')[0].alt
+                      let name = $($div).find('span').text()
+                      console.log(name)
+                      console.log('yooo ' + name)
                       if (item.title === name) {
                         console.log('item already in search')
                         alreadyin = true
@@ -278,10 +281,10 @@ $(document).ready(() => {
                     console.log($items.children())
                     $items.children().each(function() {
                       const $div = this
-                      if ($($div).find('img')[0] === undefined) {
+                      if ($($div).find('span').text() === undefined) {
                         console.log('undefined yo')
                       } else {
-                        let name = $($div).find('img')[0].alt
+                        let name = $($div).find('span').text()
                         console.log(name)
                         if (item.title === name) {
                           console.log('item already in search')

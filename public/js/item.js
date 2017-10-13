@@ -32,13 +32,11 @@ $(document).ready(() => {
             deletebutton.click(function(event) {
               const jaxObj = {
                 method: "DELETE",
-                url: `/items/${item[0].id}`
+                url: `/items/${item[0].id}`,
               }
               $.ajax(jaxObj)
                 .done((data) => {
-                  console.log(data)
-                  console.log('got em')
-                  window.location.href = `/userProfile.html?id=${userId}`
+                  window.location.href = `/userProfile.html?id=${userId}`;
                 })
                 .fail(($xhr) => {
                   Materialize.toast($xhr.responseText, 3000);
@@ -46,7 +44,7 @@ $(document).ready(() => {
             })
             $('.buttonRow').append(editbutton)
             $('.buttonRow').append(deletebutton)
-
+            //done
           }
 
         })

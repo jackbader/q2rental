@@ -130,30 +130,20 @@ $(document).ready(() => {
 
                   if (item.owner_id == user_id) {
 
-                    console.log('test')
-                    const $card = $('<div>').addClass('card col s4 m4 l4 ');
-                    $card.attr('style', 'padding: 0px; width:371px;')
-                    const $cardimage = $('<div>').addClass('card-image')
-                    // $cardimage.attr('style', 'padding-bottom: 30px;')
-                    const $cardContent = $('<div>').addClass('card-content black-text')
-                    const $span = $('<span>').addClass('card-title')
-                    $span.text(item.title)
-                    const $pPrice = $('<p>')
-                    $pPrice.text("Price: $" + item.daily_price + " a day.")
-                    const $p = $('<p>')
-                    $p.text('Desc: ' + item.desc)
-                    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+                  const $card = (`<a href= item.html?id=${item.id}>` +
+                                  "<div class = col s5 m5 l5>" +
+                                    "<div class = card>" +
+                                      "<div class = card-title>" +
+                                      "<span>" + item.title + "</span>" +
+                                      "</div>" +
+                                      "<div class = cInfo>" +
+                                      "<p id = desc>" + item.desc + "</p>" +
+                                      "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
+                                      "</div>" +
+                                    "</div>" +
+                                  "</div>" +
+                                "</a>")
 
-                    $cardimage.append($img)
-                    $card.append($cardimage);
-                    $cardContent.append($span)
-                    $cardContent.append($pPrice)
-                    $cardContent.append($p)
-                    $card.append($cardContent)
-                    console.log($card)
-                    $card.click(function() {
-                      window.location.href = `/item.html?id=${item.id}`
-                    })
                     let li = $('<li>')
                     li.append($card)
                     $('#itemList').append(li);
