@@ -76,7 +76,7 @@ $(document).ready(() => {
     $pPrice.text("$" + item.daily_price + " a day.")
     const $p = $('<p>')
     $p.text(item.desc)
-    const $img = $('<img>').attr({ src: item.img_url, alt: item.title });
+    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
 
     $card.append($anchor);
     $card.append($img);

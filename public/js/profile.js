@@ -2,11 +2,13 @@ $(document).ready(() => {
 
   console.log('profile js linked!')
 
+  $('.loader').hide()
+
   const userId = window.QUERY_PARAMETERS.id;
 
   $('#profilePic').change('change', function() {
-    // $("#profilePic").jfilestyle('clear');
 
+    $('.loader').show()
 
     let fileupload = $('#profilePic')
 
@@ -29,6 +31,7 @@ $(document).ready(() => {
         }
         $.ajax(jaxObj)
           .done(() => {
+            $('.loader').hide()
             console.log('got em')
           })
           .fail(($xhr) => {
@@ -106,7 +109,7 @@ $(document).ready(() => {
             // show query parameters
             getUser(userId)
             loadRentables(userId)
-            $('#profilePic').hide()
+            $('#edit').hide()
             $('.jfilestyle').hide()
           }
         }
@@ -161,6 +164,5 @@ $(document).ready(() => {
               })
             })
       }
-
 
 })
