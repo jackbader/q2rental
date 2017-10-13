@@ -26,6 +26,7 @@ $(document).ready(() => {
           if (item.cat == cat) {
             //add item
             let $card = createCard(item)
+            $card.
             $items.append($card)
           }
         }
@@ -244,7 +245,9 @@ $(document).ready(() => {
                       console.log('undefined yo')
                       alreadyin = false
                     } else {
-                      let name = $($div).find('img')[0].alt
+                      let name = $($div).find('span').text()
+                      console.log(name)
+                      console.log('yooo ' + name)
                       if (item.title === name) {
                         console.log('item already in search')
                         alreadyin = true
@@ -278,10 +281,10 @@ $(document).ready(() => {
                     console.log($items.children())
                     $items.children().each(function() {
                       const $div = this
-                      if ($($div).find('img')[0] === undefined) {
+                      if ($($div).find('span').text() === undefined) {
                         console.log('undefined yo')
                       } else {
-                        let name = $($div).find('img')[0].alt
+                        let name = $($div).find('span').text()
                         console.log(name)
                         if (item.title === name) {
                           console.log('item already in search')
