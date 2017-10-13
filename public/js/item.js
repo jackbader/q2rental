@@ -25,8 +25,26 @@ $(document).ready(() => {
             editbutton.attr({
               href: `/itemEdit.html?id=${item[0].id}`,
             })
-            .tooltip();
+            let deletebutton = $('<a>')
+            deletebutton.addClass('waves-effect waves-light btn-large')
+            deletebutton.attr('id', 'deleteBtn')
+            deletebutton.text('Delete')
+            deletebutton.click(function(event) {
+              const jaxObj = {
+                method: "DELETE",
+                url: `/items/${item[0].id}`,
+              }
+              $.ajax(jaxObj)
+                .done((data) => {
+                  window.location.href = `/userProfile.html?id=${userId}`;
+                })
+                .fail(($xhr) => {
+                  Materialize.toast($xhr.responseText, 3000);
+                })
+            })
+
             $('.buttonRow').append(editbutton)
+            $('.buttonRow').append(deletebutton)
             //done
           }
 
