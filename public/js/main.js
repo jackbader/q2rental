@@ -47,42 +47,68 @@ $(document).ready(() => {
       .done((items) => {
 
         for (const item of items) {
-        const title = item.title
+        // const title = item.title
 
 
-          const $anchor = $('<a>')
-            .attr({
-              href: `/item.html?id=${item.id}`,
-              'data-delay': '50',
-              'data-tooltip': item.title
-            })
-            .tooltip();
+          // const $anchor = $('<a>')
+          //   .attr({
+          //     href: `/item.html?id=${item.id}`,
+          //     'data-delay': '50',
+          //     'data-tooltip': item.title
+          //   })
+          //   .tooltip();
 
-            const $card = $('<div>').addClass('card col s4 m4 l4 ');
-            $card.attr('style', 'padding: 0px;')
-            const $cardimage = $('<div>').addClass('card-image')
+            // let color = "red"
+            // const $card = $('<div>').addClass('card col s4 m4 l4 ');
+            // $card.attr('style', `background-color:${color};`)
+            // const $cardimage = $('<div>').addClass('card-image')
             // $cardimage.attr('style', 'padding-bottom: 30px;')
-            const $cardContent = $('<div>').addClass('card-content black-text')
-            const $span = $('<span>').addClass('card-title')
-            $span.text(item.title)
-            const $pPrice = $('<p>')
-            $pPrice.text("Price: $" + item.daily_price + " a day.")
-            const $p = $('<p>')
-            $p.text('Desc: ' + item.desc)
-            const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+            // const $cardContent = $('<div>').addClass('card-content black-text')
+            // const $span = $('<span>').addClass('card-title')
+            // $span.text(item.title)
+            // const $pPrice = $('<p>')
+            // $pPrice.text("Price: $" + item.daily_price + " a day.")
+            // const $p = $('<p>')
+            // $p.text('Desc: ' + item.desc)
+            // const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
 
-            $card.append($anchor);
-            $cardimage.append($img)
-            $card.append($cardimage);
-            $cardContent.append($span)
-            $cardContent.append($pPrice)
-            $cardContent.append($p)
-            $card.append($cardContent)
-            $items.append($card)
+            // $card.append($anchor);
+            // $card.append($cardimage);
+            // $cardContent.append($span)
+            // $cardContent.append($pPrice)
+            // $cardContent.append($p)
+            // $card.append($cardContent)
+            // $items.append($card)
 
-          // $items.append()
+          // const $items = $('.your-class')
+          // const $anchor = $('<a>')
+          //   .attr({
+          //     href: `/item.html?id=${item.id}`,
+          //     'data-delay': '50',
+          //     'data-tooltip': item.title
+          //   })
+          //   .tooltip();
 
-          $card.click(function() {
+          var color = "red"
+
+          $items.append(`<a href= item.html?id=${item.id}>` +
+                          "<div class = col s5 m5 l5>" +
+                            `<div class = card style = background-color: ${color}; >` +
+                              "<div class = card-title>" +
+                              "<span>" + item.title + "</span>" +
+                              "</div>" +
+                              "<div id = card-image class = card-image>" +
+                              `<img id = pic src = ${item.img_url} alt = ${item.title}>` +
+                              "</div>" +
+                              "<div class = cInfo>" +
+                              "<p id = desc>" + item.desc + "</p>" +
+                              "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
+                              "</div>" +
+                            "</div>" +
+                          "</div>" +
+                        "</a>")
+
+          $(".card").click(function() {
             window.location.href = `item.html?id=${item.id}`;
           })
         }
