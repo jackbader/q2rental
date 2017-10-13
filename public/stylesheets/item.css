@@ -8,6 +8,11 @@ body {
 #test {
   margin-top: 40px !important;
 }
+#deleteBtn {
+  background-color: #7F9895;
+  margin-top: 5%;
+  margin-left: 5%;
+}
 .brand-logo {
   margin-left: 3%;
 }
