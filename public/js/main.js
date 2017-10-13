@@ -26,7 +26,7 @@ $(document).ready(() => {
           if (item.cat == cat) {
             //add item
             let $card = createCard(item)
-            $card.
+
             $items.append($card)
           }
         }
