@@ -27,7 +27,7 @@ $(document).ready(() => {
             })
             .tooltip();
             $('.buttonRow').append(editbutton)
-
+            //done
           }
 
         })
