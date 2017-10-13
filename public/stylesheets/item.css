@@ -38,6 +38,12 @@ nav {
   margin-left: 8%;
   line-height: 220%;
 }
+.price {
+  width:40%;
+  margin-top: 3%;
+  margin-left: 8%;
+  line-height: 220%;
+}
 #userInfo {
   margin-bottom: 5%;
 }

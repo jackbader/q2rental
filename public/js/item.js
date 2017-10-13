@@ -65,6 +65,7 @@ $(document).ready(() => {
     $('.img').attr({src: item.img_url})
     $('.desc').text('Description: ' + item.desc)
     $('.title').text(item.title)
+    $('.price').text('Daily Price: $' + item.daily_price)
   }
 
   const rentButton = function(item) {
@@ -85,6 +86,7 @@ $(document).ready(() => {
               .done(() => {
                 $('.rentButton').addClass('disabled')
                 $('.rentButton').text('Currently Rented')
+                Materialize.toast('Emails have been sent', 3000)
                 // window.location.href = 'paymentpage';
               })
             })
