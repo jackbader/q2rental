@@ -103,7 +103,7 @@ $(document).ready(() => {
                               `<img id = pic src = ${item.img_url} alt = ${item.title}>` +
                               "</div>" +
                               "<div class = cInfo>" +
-                              "<p id = desc>" + item.desc + "</p>" +
+                              // "<p id = desc>" + item.desc + "</p>" +
                               "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
                               "</div>" +
                             "</div>" +
