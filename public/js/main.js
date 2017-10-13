@@ -41,7 +41,7 @@ $(document).ready(() => {
 
   })
 
-
+  var i = 0;
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
@@ -50,42 +50,70 @@ $(document).ready(() => {
         const title = item.title
 
 
-          const $anchor = $('<a>')
-            .attr({
-              href: `/item.html?id=${item.id}`,
-              'data-delay': '50',
-              'data-tooltip': item.title
-            })
-            .tooltip();
+          // const $anchor =w $('<a>')
+          //   .attr({
+          //     href: `/item.html?id=${item.id}`,
+          //     'data-delay': '50',
+          //     'data-tooltip': item.title
+          //   })
+          //   .tooltip();
+          //
+          //   let color = "red"
+          //   const $card = $('<div>').addClass('card col s4 m4 l4 ');
+          //   $card.attr('style', `background-color:${color};`)
+          //   const $cardimage = $('<div>').addClass('card-image')
+          //   $cardimage.attr('style', 'padding-bottom: 30px;')
+          //   const $cardContent = $('<div>').addClass('card-content black-text')
+          //   const $span = $('<span>').addClass('card-title')
+          //   $span.text(item.title)
+          //   const $pPrice = $('<p>')
+          //   $pPrice.text("Price: $" + item.daily_price + " a day.")
+          //   const $p = $('<p>')
+          //   $p.text('Desc: ' + item.desc)
+          //   const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+          //
+          //   $card.append($anchor);
+          //   $card.append($cardimage);
+          //   $cardContent.append($span)
+          //   $cardContent.append($pPrice)
+          //   $cardContent.append($p)
+          //   $card.append($cardContent)
+          //   $items.append($card)
 
-            const $card = $('<div>').addClass('card col s4 m4 l4 ');
-            $card.attr('style', 'padding: 0px;')
-            const $cardimage = $('<div>').addClass('card-image')
-            // $cardimage.attr('style', 'padding-bottom: 30px;')
-            const $cardContent = $('<div>').addClass('card-content black-text')
-            const $span = $('<span>').addClass('card-title')
-            $span.text(item.title)
-            const $pPrice = $('<p>')
-            $pPrice.text("Price: $" + item.daily_price + " a day.")
-            const $p = $('<p>')
-            $p.text('Desc: ' + item.desc)
-            const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+          const green = "#4FCCB2"
+          const blue = "#42BADF"
+          const orange = "#F3AA4E"
+          const red = "#EF7858"
+          const colorPalet = [ green, red, blue, orange ]
 
-            $card.append($anchor);
-            $cardimage.append($img)
-            $card.append($cardimage);
-            $cardContent.append($span)
-            $cardContent.append($pPrice)
-            $cardContent.append($p)
-            $card.append($cardContent)
-            $items.append($card)
+          var color = colorPalet[i]
+          i += 1
+          if(i == 5) {
+            var color = colorPalet[0]
+            i = 1
+          }
 
-          // $items.append()
+          const $card = (`<a href= item.html?id=${item.id}>` +
+                          "<div class = col s5 m5 l5>" +
+                            `<div style = background-color:${color}; class = card>` +
+                              "<div class = card-title>" +
+                              "<span>" + item.title + "</span>" +
+                              "</div>" +
+                              "<div id = card-image class = card-image>" +
+                              `<img id = pic src = ${item.img_url} alt = ${item.title}>` +
+                              "</div>" +
+                              "<div class = cInfo>" +
+                              "<p id = desc>" + item.desc + "</p>" +
+                              "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
+                              "</div>" +
+                            "</div>" +
+                          "</div>" +
+                        "</a>")
 
-          $card.click(function() {
-            window.location.href = `item.html?id=${item.id}`;
-          })
+          $items.append($card)
+          // i++
         }
+
         $('.your-class').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -99,38 +127,54 @@ $(document).ready(() => {
   }
 
   function createCard(item) {
-    const $anchor = $('<a>')
-      .attr({
-        href: `/item.html?id=${item.id}`,
-        'data-delay': '50',
-        'data-tooltip': item.title
-      })
-      .tooltip();
+    // const $anchor = $('<a>')
+    //   .attr({
+    //     href: `/item.html?id=${item.id}`,
+    //     'data-delay': '50',
+    //     'data-tooltip': item.title
+    //   })
+    //   .tooltip();
+    //
+    // const $card = $('<div>').addClass('card col s4 m4 l4 ');
+    // $card.attr('style', 'padding: 0px; width:371px;')
+    // const $cardimage = $('<div>').addClass('card-image')
+    // // $cardimage.attr('style', 'padding-bottom: 30px;')
+    // const $cardContent = $('<div>').addClass('card-content black-text')
+    // const $span = $('<span>').addClass('card-title')
+    // $span.text(item.title)
+    // const $pPrice = $('<p>')
+    // $pPrice.text("Price: $" + item.daily_price + " a day.")
+    // const $p = $('<p>')
+    // $p.text('Desc: ' + item.desc)
+    // const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+    //
+    // $card.append($anchor);
+    // $cardimage.append($img)
+    // $card.append($cardimage);
+    // $cardContent.append($span)
+    // $cardContent.append($pPrice)
+    // $cardContent.append($p)
+    // $card.append($cardContent)
+    const $card = (`<a href= item.html?id=${item.id}>` +
+                    "<div class = col s5 m5 l5>" +
+                      "<div class = card>" +
 
-    const $card = $('<div>').addClass('card col s4 m4 l4 ');
-    $card.attr('style', 'padding: 0px; width:371px;')
-    const $cardimage = $('<div>').addClass('card-image')
-    // $cardimage.attr('style', 'padding-bottom: 30px;')
-    const $cardContent = $('<div>').addClass('card-content black-text')
-    const $span = $('<span>').addClass('card-title')
-    $span.text(item.title)
-    const $pPrice = $('<p>')
-    $pPrice.text("Price: $" + item.daily_price + " a day.")
-    const $p = $('<p>')
-    $p.text('Desc: ' + item.desc)
-    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+                        "<div class = card-title>" +
+                        "<span>" + item.title + "</span>" +
+                        "</div>" +
 
-    $card.append($anchor);
-    $cardimage.append($img)
-    $card.append($cardimage);
-    $cardContent.append($span)
-    $cardContent.append($pPrice)
-    $cardContent.append($p)
-    $card.append($cardContent)
+                        "<div id = card-image class = card-image>" +
+                        `<img id = pic src = ${item.img_url} alt = ${item.title}>` +
+                        "</div>" +
 
-    $card.click(function() {
-      window.location.href = `item.html?id=${item.id}`;
-    })
+                        "<div class = cInfo>" +
+                        "<p id = desc>" + item.desc + "</p>" +
+                        "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
+                        "</div>" +
+
+                      "</div>" +
+                    "</div>" +
+                  "</a>")
 
     return $card
   }
@@ -238,6 +282,7 @@ $(document).ready(() => {
                         console.log('undefined yo')
                       } else {
                         let name = $($div).find('img')[0].alt
+                        console.log(name)
                         if (item.title === name) {
                           console.log('item already in search')
                           alreadyin = true

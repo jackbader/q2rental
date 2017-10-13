@@ -8,15 +8,9 @@ body {
 nav {
   background-color: #F7B66F !important;
 }
-.card .card-content {
-  background-color: white;
-}
-.card .col {
-    padding: 0px !important;
-}
-#your-class .card {
+/*#your-class .card {
   margin: 10px !important;
-}
+}*/
 #profileIcon {
   position:relative;
   top:5%;
@@ -51,5 +45,44 @@ nav {
   color:  #C2A68C;
   padding-left: 28%;
 }
+#card-image {
+  width: 280px;
+  height: 250px;
+  /*margin: 5%, 5%, 3%, 5% !important;*/
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-left:10%;
+}
+#pic{
+  /*width: 70%;*/
+  object-fit: contain;
+}
+.card p {
+  color: #7F9895 !important;
+}
+.card-title {
+  padding-top: 2%;
+  padding-left: 10%;
+  color: #7F9895 !important;
+}
+.cInfo {
+  font-size: 2vh;
+  /*padding: 2%, 0, 2%, 10% ;*/
+}
+#desc {
+  text-align: left;
+  padding-left: 10%;
+  padding-bottom: 2%;
+}
+#price {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+
+
+
+
+
 
 bs
