@@ -4,11 +4,47 @@ $(document).ready(() => {
 
   $('#myInput').val('')
 
-//djklsfhkjsdflkdhsfksldfglsd
+  const $items = $('.your-class');
+
+
+  function catFunction() {
+    let cat = $('#dropdown').val()
+
+    $.getJSON('/items')
+      .done((items) => {
+
+        $('.your-class').children().remove()
+        $('.your-class').removeClass('slick-initialized slick-slider')
+
+        for (const item of items) {
+          console.log(item.cat)
+          if (cat === 'All') {
+            //add all items
+            let $card = createCard(item)
+            $items.append($card)
+          }
+          if (item.cat == cat) {
+            //add item
+            let $card = createCard(item)
+            $items.append($card)
+          }
+        }
+      })
+      .fail(() => {
+        Materialize.toast('Unable to retrieve items', 3000);
+      })
+  }
+
+  $('#dropdown').change(function(event) {
+
+      catFunction()
+
+  })
+
+
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
-        const $items = $('.your-class');
 
         for (const item of items) {
         const title = item.title
@@ -22,24 +58,27 @@ $(document).ready(() => {
             })
             .tooltip();
 
-          const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
-          //$card.attr('style', 'background-color: blue;')
-          const $cardContent = $('<div>').addClass('card-content black-text')
-          const $span = $('<span>').addClass('card-title')
-          $span.text(item.title)
-          const $pPrice = $('<p>')
-          $pPrice.text("$" + item.daily_price + " a day.")
-          const $p = $('<p>')
-          $p.text(item.desc)
-          const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
+            const $card = $('<div>').addClass('card col s4 m4 l4 ');
+            $card.attr('style', 'padding: 0px;')
+            const $cardimage = $('<div>').addClass('card-image')
+            // $cardimage.attr('style', 'padding-bottom: 30px;')
+            const $cardContent = $('<div>').addClass('card-content black-text')
+            const $span = $('<span>').addClass('card-title')
+            $span.text(item.title)
+            const $pPrice = $('<p>')
+            $pPrice.text("Price: $" + item.daily_price + " a day.")
+            const $p = $('<p>')
+            $p.text('Desc: ' + item.desc)
+            const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
 
-          $card.append($anchor);
-          $card.append($img);
-          $cardContent.append($span)
-          $cardContent.append($pPrice)
-          $cardContent.append($p)
-          $card.append($cardContent)
-          $items.append($card);
+            $card.append($anchor);
+            $cardimage.append($img)
+            $card.append($cardimage);
+            $cardContent.append($span)
+            $cardContent.append($pPrice)
+            $cardContent.append($p)
+            $card.append($cardContent)
+            $items.append($card)
 
           // $items.append()
 
@@ -68,18 +107,22 @@ $(document).ready(() => {
       })
       .tooltip();
 
-    const $card = $('<div>').addClass('card card-image col s2 m2 l2 ');
+    const $card = $('<div>').addClass('card col s4 m4 l4 ');
+    $card.attr('style', 'padding: 0px; width:371px;')
+    const $cardimage = $('<div>').addClass('card-image')
+    // $cardimage.attr('style', 'padding-bottom: 30px;')
     const $cardContent = $('<div>').addClass('card-content black-text')
     const $span = $('<span>').addClass('card-title')
     $span.text(item.title)
     const $pPrice = $('<p>')
-    $pPrice.text("$" + item.daily_price + " a day.")
+    $pPrice.text("Price: $" + item.daily_price + " a day.")
     const $p = $('<p>')
-    $p.text(item.desc)
-    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 80, width: 80 });
+    $p.text('Desc: ' + item.desc)
+    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
 
     $card.append($anchor);
-    $card.append($img);
+    $cardimage.append($img)
+    $card.append($cardimage);
     $cardContent.append($span)
     $cardContent.append($pPrice)
     $cardContent.append($p)
@@ -115,8 +158,18 @@ $(document).ready(() => {
 
     let input = $('#myInput').val()
 
+    let cat = $('#dropdown').val()
+
     if (input === '') {
-      console.log('blank')
+
+      //check for cat selection
+      if (cat != null) {
+        searches = 0;
+        $('.your-class').empty()
+        $('.your-class').removeClass('slick-initialized slick-slider')
+        return catFunction()
+      }
+
       searches = 0;
       $('.your-class').empty()
       $('.your-class').removeClass('slick-initialized slick-slider')
@@ -131,14 +184,13 @@ $(document).ready(() => {
     const $items = $('.your-class');
       $.getJSON('/items')
         .done((items) => {
+          console.log(cat)
             for (const item of items) {
               let title = item.title
               let newarr = title.split(" ")
 
-              console.log()
-
               for (const word of newarr) {
-                if (word.slice(0, length) === input) {
+                if (word.slice(0, length).toLowerCase() === input.toLowerCase()) {
                   let card = createCard(item)
 
                   let alreadyin = false;
@@ -159,8 +211,19 @@ $(document).ready(() => {
                   if (alreadyin === true) {
 
                   } else {
-                    $items.append(card)
-                    break
+
+                    //check if matches cat
+                    console.log('test' + item.cat)
+                    if (cat === 'All' || cat === null) {
+                      $items.append(card)
+                      break
+                    } else {
+                      if (cat === item.cat) {
+                        $items.append(card)
+                        break
+                      }
+                    }
+
                   }
 
                 } else {
@@ -185,8 +248,17 @@ $(document).ready(() => {
                     if (alreadyin === true) {
 
                     } else {
-                      $items.append(card)
-                      break
+                      //check if matches cat
+                      console.log(item.cat)
+                      if (cat === 'All' || cat === null) {
+                        $items.append(card)
+                        break
+                      } else {
+                        if (cat === item.cat) {
+                          $items.append(card)
+                          break
+                        }
+                      }
                     }
                   }
                   else {

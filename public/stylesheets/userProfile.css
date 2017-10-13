@@ -50,6 +50,10 @@
     color: #000;
 }
 
+.card {
+  margin-left: 30px !important;
+}
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   width: 100%;

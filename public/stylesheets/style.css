@@ -8,6 +8,12 @@ body {
 nav {
   background-color: #F7B66F !important;
 }
+.card .card-content {
+  background-color: white;
+}
+.card .col {
+    padding: 0px !important;
+}
 #your-class .card {
   margin: 10px !important;
 }
