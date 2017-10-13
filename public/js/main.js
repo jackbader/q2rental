@@ -41,13 +41,13 @@ $(document).ready(() => {
 
   })
 
-
+  // var i = 0;
   const slick = function () {
     $.getJSON('/items')
       .done((items) => {
 
         for (const item of items) {
-        // const title = item.title
+        const title = item.title
 
 
           // const $anchor = $('<a>')
@@ -57,43 +57,46 @@ $(document).ready(() => {
           //     'data-tooltip': item.title
           //   })
           //   .tooltip();
+          //
+          //   let color = "red"
+          //   const $card = $('<div>').addClass('card col s4 m4 l4 ');
+          //   $card.attr('style', `background-color:${color};`)
+          //   const $cardimage = $('<div>').addClass('card-image')
+          //   $cardimage.attr('style', 'padding-bottom: 30px;')
+          //   const $cardContent = $('<div>').addClass('card-content black-text')
+          //   const $span = $('<span>').addClass('card-title')
+          //   $span.text(item.title)
+          //   const $pPrice = $('<p>')
+          //   $pPrice.text("Price: $" + item.daily_price + " a day.")
+          //   const $p = $('<p>')
+          //   $p.text('Desc: ' + item.desc)
+          //   const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+          //
+          //   $card.append($anchor);
+          //   $card.append($cardimage);
+          //   $cardContent.append($span)
+          //   $cardContent.append($pPrice)
+          //   $cardContent.append($p)
+          //   $card.append($cardContent)
+          //   $items.append($card)
 
-            // let color = "red"
-            // const $card = $('<div>').addClass('card col s4 m4 l4 ');
-            // $card.attr('style', `background-color:${color};`)
-            // const $cardimage = $('<div>').addClass('card-image')
-            // $cardimage.attr('style', 'padding-bottom: 30px;')
-            // const $cardContent = $('<div>').addClass('card-content black-text')
-            // const $span = $('<span>').addClass('card-title')
-            // $span.text(item.title)
-            // const $pPrice = $('<p>')
-            // $pPrice.text("Price: $" + item.daily_price + " a day.")
-            // const $p = $('<p>')
-            // $p.text('Desc: ' + item.desc)
-            // const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
+          // const green = "#4FCCB2"
+          // const blue = "#42BADF"
+          // const orange = "#F3AA4E"
+          // const red = "#EF7858"
+          // const colorPalet = [ green, red, blue, orange ]
 
-            // $card.append($anchor);
-            // $card.append($cardimage);
-            // $cardContent.append($span)
-            // $cardContent.append($pPrice)
-            // $cardContent.append($p)
-            // $card.append($cardContent)
-            // $items.append($card)
-
-          // const $items = $('.your-class')
-          // const $anchor = $('<a>')
-          //   .attr({
-          //     href: `/item.html?id=${item.id}`,
-          //     'data-delay': '50',
-          //     'data-tooltip': item.title
-          //   })
-          //   .tooltip();
-
-          var color = "red"
+          // var color
+          // var color = colorPalet[i]
+          // i += 1
+          // if(i == 5) {
+          //   var color = colorPalet[4]
+          //   i = 0
+          // }
 
           $items.append(`<a href= item.html?id=${item.id}>` +
                           "<div class = col s5 m5 l5>" +
-                            `<div class = card style = background-color: ${color}; >` +
+                            "<div class = card>" +
                               "<div class = card-title>" +
                               "<span>" + item.title + "</span>" +
                               "</div>" +
@@ -107,11 +110,15 @@ $(document).ready(() => {
                             "</div>" +
                           "</div>" +
                         "</a>")
+          // $(".card").attr("style", `background-color: ${colorPalet[i]};`)
 
           $(".card").click(function() {
             window.location.href = `item.html?id=${item.id}`;
           })
+
+          // i++
         }
+
         $('.your-class').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
