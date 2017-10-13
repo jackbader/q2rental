@@ -158,7 +158,7 @@ $(document).ready(() => {
     // $card.append($cardContent)
     const $card = (`<a href= item.html?id=${item.id}>` +
                     "<div class = col s5 m5 l5>" +
-                      "<div class = card>" +
+                      "<div style = background-color:#7F9895; class = card>" +
 
                         "<div class = card-title>" +
                         "<span>" + item.title + "</span>" +
@@ -169,7 +169,7 @@ $(document).ready(() => {
                         "</div>" +
 
                         "<div class = cInfo>" +
-                        "<p id = desc>" + item.desc + "</p>" +
+                        // "<p id = desc>" + item.desc + "</p>" +
                         "<p id = price> Daily Price: $" + item.daily_price + " </p>" +
                         "</div>" +
 
