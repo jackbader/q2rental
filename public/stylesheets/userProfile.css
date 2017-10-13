@@ -50,10 +50,6 @@
     color: #000;
 }
 
-.card {
-  margin-left: 30px !important;
-}
-
 body {
   font-family: Verdana, Geneva, sans-serif;
   width: 100%;
@@ -97,4 +93,28 @@ hr {
   background-color:  #F7B66F ;
   width:60%;
   margin-left: 20%;
+}
+.card {
+  width:720px !important;
+}
+.card p {
+  color: #7F9895 !important;
+}
+.card-title {
+  padding-top: 2%;
+  padding-left: 10%;
+  color: #7F9895 !important;
+}
+.cInfo {
+  font-size: 2vh;
+  /*padding: 2%, 0, 2%, 10% ;*/
+}
+#desc {
+  text-align: left;
+  padding-left: 10%;
+  padding-bottom: 2%;
+}
+#price {
+  text-align: center;
+  padding-bottom: 5%;
 }
