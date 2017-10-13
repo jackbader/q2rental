@@ -2,11 +2,13 @@ $(document).ready(() => {
 
   console.log('profile js linked!')
 
+  $('.loader').hide()
+
   const userId = window.QUERY_PARAMETERS.id;
 
   $('#profilePic').change('change', function() {
-    // $("#profilePic").jfilestyle('clear');
 
+    $('.loader').show()
 
     let fileupload = $('#profilePic')
 
@@ -29,6 +31,7 @@ $(document).ready(() => {
         }
         $.ajax(jaxObj)
           .done(() => {
+            $('.loader').hide()
             console.log('got em')
           })
           .fail(($xhr) => {
@@ -77,10 +80,10 @@ $(document).ready(() => {
 
         if (data.hasToken === false) {
           //is not logged in
-          getUser(user_id)
-          loadRentables(user_id)
+          getUser(userId)
+          loadRentables(userId)
           $('#profilePic').hide()
-          $('.jfilestyle').hide()
+          $('#edit').hide()
         } else {
           // is logged in // check if matches QUERY_PARAMETERS
           const user_id = data.cookies.userId
@@ -106,7 +109,7 @@ $(document).ready(() => {
             // show query parameters
             getUser(userId)
             loadRentables(userId)
-            $('#profilePic').hide()
+            $('#edit').hide()
             $('.jfilestyle').hide()
           }
         }
@@ -128,23 +131,26 @@ $(document).ready(() => {
                   if (item.owner_id == user_id) {
 
                     console.log('test')
-                    const $card = $('<div>').addClass('card card-image');
-
+                    const $card = $('<div>').addClass('card col s4 m4 l4 ');
+                    $card.attr('style', 'padding: 0px; width:371px;')
+                    const $cardimage = $('<div>').addClass('card-image')
+                    // $cardimage.attr('style', 'padding-bottom: 30px;')
                     const $cardContent = $('<div>').addClass('card-content black-text')
                     const $span = $('<span>').addClass('card-title')
                     $span.text(item.title)
                     const $pPrice = $('<p>')
-                    $pPrice.text("$" + item.daily_price + " a day.")
+                    $pPrice.text("Price: $" + item.daily_price + " a day.")
                     const $p = $('<p>')
-                    $p.text(item.desc)
-                    const $img = $('<img>').attr({ alt: item.title, height: 80, width: 80 });
+                    $p.text('Desc: ' + item.desc)
+                    const $img = $('<img>').attr({ src: item.img_url, alt: item.title, height: 200, width: 200, style: 'object-fit: contain;' });
 
-
-                    $card.append($img);
+                    $cardimage.append($img)
+                    $card.append($cardimage);
                     $cardContent.append($span)
                     $cardContent.append($pPrice)
                     $cardContent.append($p)
                     $card.append($cardContent)
+                    console.log($card)
                     $card.click(function() {
                       window.location.href = `/item.html?id=${item.id}`
                     })
@@ -161,6 +167,5 @@ $(document).ready(() => {
               })
             })
       }
-
 
 })

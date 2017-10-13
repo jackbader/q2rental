@@ -6,6 +6,11 @@ $(document).ready(() => {
   $.getJSON('/token')
     .done((data) => {
 
+      if (data.hasToken === false) {
+        //is not logged in
+        return
+      }
+
       //check if item is users
       let userId = data.cookies.userId
 
@@ -41,7 +46,7 @@ $(document).ready(() => {
   const renderItem = function(item) {
     $(document).prop('title', item.title);
     $('.img').attr({src: item.img_url})
-    $('.desc').text(item.desc)
+    $('.desc').text('Description: ' + item.desc)
     $('.title').text(item.title)
   }
 
