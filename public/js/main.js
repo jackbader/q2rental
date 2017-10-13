@@ -93,7 +93,7 @@ $(document).ready(() => {
             i = 1
           }
 
-          const $card = (`<a href= item.html?id=${item.id}>` +
+          const $card = (`<a class = theCard href= item.html?id=${item.id}>` +
                           "<div class = col s5 m5 l5>" +
                             `<div style = background-color:${color}; class = card>` +
                               "<div class = card-title>" +

@@ -57,13 +57,16 @@ nav {
   /*width: 70%;*/
   object-fit: contain;
 }
+.theCard {
+  margin-top:1.5%;
+}
 .card p {
-  color: #7F9895 !important;
+  color: #FFFFFF !important;
 }
 .card-title {
   padding-top: 2%;
   padding-left: 10%;
-  color: #7F9895 !important;
+  color: #FFFFFF !important;
 }
 .cInfo {
   font-size: 2vh;
@@ -77,6 +80,10 @@ nav {
 #price {
   text-align: center;
   padding-bottom: 5%;
+}
+input[type=text]:focus {
+  border-bottom: 1px solid #EF7858 !important;
+  box-shadow: 0 1px 0 0 #EF7858 !important;
 }
 
 
